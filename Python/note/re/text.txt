@@ -1,0 +1,525 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>公告全文_民生银行(600016)_个股资料_行情中心_和讯网</title>
+		<link href="/2008/css/gegu.css" rel="stylesheet" type="text/css" />
+		<script language="javascript" src="/2008/js/Common.js"></script>
+		<script language="javascript" src="/2008/js/stockdata2008.js"></script>
+	</head>
+	<body onload="HYRequest.Request();">
+	<!-- head -->
+			<style>
+.wrap {
+width: 960px;
+margin: 10px auto 0 auto;
+border-top: 4px solid #1e5fb0;
+}
+#wrap {
+width: 960px;
+margin: 10px auto 0 auto;
+border-top: 4px solid #1e5fb0;
+}
+</style>
+<!-- adhoc sdk -->
+<script src=https://sdk.appadhoc.com/ab.plus.js></script>
+<script>
+adhoc('init', {
+appKey: 'ADHOC_584d2ccf-6b52-4fca-826e-66c59854205a'
+})
+</script>
+<script src="https://img.hexun.com/2016/pc/ad/bannercode/js/201808070942/articleAB.js"></script>
+<!-- adhoc sdk end -->
+
+<!--==========================login-header-s===============================-->
+<link rel="stylesheet" type="text/css" href="https://img.hexun.com/standardfootandhead/2015/css/header_v1.css" />
+<div class="shortcut-2014-w960" id="shortcut-2014">
+ <div class="shortcut-2014-w960-con clearfix">
+  <div class="topHeaderConL"><a href="http://www.hexun.com" target="blank" class="tohome">和讯首页</a>|<a href="http://3g.hexun.com/download_news/" target="_blank" class="mobileUpload">手机和讯</a></div>
+   <div class="topHeaderConR">
+    <link href="https://logintool.hexun.com/OtherInterFace/style/newbase.css" rel="stylesheet" type="text/css">
+    <script src="https://logintool.hexun.com/OtherInterFace/js/popup.js" type="text/javascript" charset="gb2312"></script>
+    <script charset="gb2312" type="text/javascript" language="javascript">
+      var href=window.location.href;
+      hexunMember_loginSetup_signOutURL=href;//登出地址
+      hexunMember_loginSetup_noLoginDisplayMsg=""; //没登陆的提示
+      hexunMember_loginSetup_noLoginDisplayFlag="";//登录和注册中间的分隔符号 或 用户名与登出中间的分隔符号，不需要分隔符可以为空
+      hexunMember_loginSetup_islogined_isDisplay=true;//如果是登陆状态，true=显示用户名和登出按钮等信息,flase=不显示任何信息
+      hexunMember_loginSetup_referrer=document.referrer;//请不要修改此项
+      hexunMember_loginSetup_MastLogin=0;//如果需要不登陆就一直弹窗，在此设置一下弹窗时间间隔(秒)。如果等于0本项无效
+    </script>
+   <!--登录前-->
+    <div id="loginBef" class="loginBef" style="display: block;">
+     <div id="hexunMember_liveDisplay"><div id="hexunMember_nologinSetup_div_display_nologin"><span id="hexunMember_nologinSetup_span_display_noLoginDisplayMsg"></span><span id="hexunMember_nologinSetup_span_display_loginBTN"><a style="cursor:pointer" onclick="javascript:popupLogin();">登录</a></span><span id="hexunMember_nologinSetup_span_display_flag"></span><span id="hexunMember_nologinSetup_span_display_userREG"><a style="cursor:pointer" onclick="javascript:popupReg();">注册</a></span></div></div>
+    </div>
+    <!--登录后-->
+    <div id="loginAfter" class="loginAfter" style="display:none">
+    </div>
+    <script src="https://logintool.hexun.com/OtherInterFace/login_2014_drop.aspx" type="text/javascript" charset="gb2312"></script>
+   </div>
+ </div>
+</div>
+<!--==========================login-header-e===============================-->
+
+
+<!--==========================top-header-s=================================-->
+<div id=headerNav_2014 class="headernav-2014-w960" checkedByCssHelper="true"><a href="http://news.hexun.com/" target=_blank checkedByCssHelper="true">新闻</a>|<a href="http://stock.hexun.com/" target=_blank checkedByCssHelper="true">股票</a>|<a href="http://opinion.hexun.com/" target=_blank checkedByCssHelper="true">评论</a>|<a href="http://forex.hexun.com/" target=_blank checkedByCssHelper="true">外汇</a>|<a href="http://bond.hexun.com/" target=_blank checkedByCssHelper="true">债券</a>|<a href="http://funds.hexun.com/" target=_blank checkedByCssHelper="true">基金</a>|<a href="http://futures.hexun.com/" target=_blank checkedByCssHelper="true">期货</a>|<a href="http://gold.hexun.com/" target=_blank checkedByCssHelper="true">黄金</a>|<a href="http://bank.hexun.com/" target=_blank checkedByCssHelper="true">银行</a>|<a href="http://insurance.hexun.com/" target=_blank checkedByCssHelper="true">保险</a>|<a href="http://data.hexun.com/" target=_blank checkedByCssHelper="true">数据</a>|<a href="http://quote.hexun.com/" target=_blank checkedByCssHelper="true">行情</a>|<a href="http://trust.hexun.com/" target=_blank checkedByCssHelper="true">信托</a>|<a href="http://money.hexun.com/" target=_blank checkedByCssHelper="true">理财</a>|<a href="http://blockchain.hexun.com" target=_blank checkedByCssHelper="true">区块链</a>|<a href="http://auto.hexun.com/" target=_blank checkedByCssHelper="true">汽车</a>|<a id="nav_house" href="http://house.hexun.com/" target=_blank checkedByCssHelper="true">房产</a>|<a href="http://tech.hexun.com/" target=_blank checkedByCssHelper="true">科技</a>|<a href="http://tv.hexun.com/" target=_blank checkedByCssHelper="true">视频</a>|<a href="http://blog.hexun.com/" target=_blank checkedByCssHelper="true">博客</a><div style="display:none">|<a href="http://caidao.hexun.com/" target=_blank checkedByCssHelper="true">直播</a>|<a href="http://caidao.hexun.com/" target=_blank checkedByCssHelper="true">财道</a></div>|<a href="http://nj.hexun.com/" target=_blank checkedByCssHelper="true">农金</a></div>
+<script language=JavaScript>
+if(document.cookie.indexOf("CITY=50")!=-1){
+document.getElementById('nav_house').href="http://cq.house.hexun.com/";
+}
+if(document.cookie.indexOf("CITY=53")!=-1){
+document.getElementById('nav_house').href="http://yn.house.hexun.com/";
+}
+if(document.cookie.indexOf("CITY=52")!=-1){
+document.getElementById('nav_house').href="http://gz.house.hexun.com/";
+}
+</script>
+
+<!--==========================top-header-e=================================-->
+
+
+<!--===========================logoNav-s===================================-->
+
+<div class="logonav-2014-w960 clearfix">
+  <div class="fl headerL">
+	  <a href="http://www.hexun.com" target="_blank"><img alt="" src="http://img.hexun.com/2015/sylogo/hexun_logo.jpg"></a>
+	  <a href="http://www.hexun.com" target="_blank" id="subChannelLogo"><img src="http://img.hexun.com/images2008/emp.gif" alt="" border="0" /></a>
+  </div>
+
+ <form id="hexunsearch2015" style="MARGIN: 0px" name="hexunsearch2015" method="post" target="_blank" onsubmit="return false;">
+  <div class="s_m fr">
+      <!--搜索-->
+		<input type="text" class="hx_inp" id="textMessage2015"  value="" autocomplete="off" style="color: rgb(133,133, 133);">
+		<input type="button" class="hx_btn" id="btnSearch">
+<input id="stockkey" type="hidden" name="key" value="1">
+	   <input id="stocktype" type="hidden" name="type" value="all">
+      <!--搜索 e-->
+  </div>
+    </form>
+</div>
+
+
+<div id="searchInfPanel"></div>
+<script type="text/javascript" src="https://web.hexun.com/pc/search/js/config-channel.js"></script>
+<script type="text/javascript" src="https://web.hexun.com/pc/search/js/search-channel.js"></script>
+<script type="text/javascript">
+	hexun.common.Search.get().init({
+ 		 url:"https://so.hexun.com/ajax.do",//数据地址
+		inputID:"textMessage2015",//搜索框地址ID
+		containerID:"searchInfPanel",//联想容器ID
+		config:urlConfigList,//链接配置
+		searchBtnID:"btnSearch",//搜索按钮的ID
+		openNewPage:true//是否新打开页面,不传时就是在当前页打开
+	});
+</script>
+
+<!--===========================logoNav-e===================================-->
+			<!-- head end -->
+
+		<div id="wrap">
+
+			<div id="navigation">
+				<a href="http://www.hexun.com" target="_blank">和讯网</a> > <a href="http://quote.hexun.com/default.html" target="_blank">行情中心</a> > <a href="http://stockdata.stock.hexun.com/600016.shtml" target="_blank">民生银行(600016)</a>
+ > 公司新闻 > 公告全文
+			</div> <!-- navigation end -->
+			<div id="sub_nav"></div> <!-- sub_nav end -->
+			<div id="gegu_content">
+				<div id="leftpart">
+					<!-- caidan -->
+					<!-- js 代码 -->
+<!---->
+<div id="menu">
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt1">股市备忘</dt>
+
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jrgg.shtml" id="a_leftmenu_dt1_2" target="_blank">
+				今日公告</a></dd>
+
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/lhb/astock.aspx" id="a_leftmenu_dt1_4" target="_blank">
+				每日公开信息</a></dd>
+
+		<dd>
+			<a href="http://stock.hexun.com/qiuzheng/" id="a_leftmenu_dt1_6" target="_blank">公司传闻</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt13"><a href="http://stock.hexun.com/zqgsdq/index.html" id="a_leftmenu_dt13_1" target="_blank">
+				券商交易</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt2">公司新闻</dt>
+		<dd>
+			<a href="http://ggzx.stock.hexun.com/more.jsp?t=0&k=600016" id="a_leftmenu_dt2_1" target="_blank">
+				公司新闻动态</a></dd>
+		<dd>
+			<a id="a_leftmenu_dt2_3" name="hyurl" target="_blank">相关行业新闻</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/lhb/gg600016.shtml" id="a_leftmenu_dt2_8">
+				龙虎榜</a></dd>
+
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_ggzy_600016.shtml" id="a_leftmenu_dt2_5">
+				公告摘要</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_ggqw_600016.shtml" id="a_leftmenu_dt2_6">
+				公告全文</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_bgqbg_600016.shtml" id="a_leftmenu_dt2_7">
+				报告期报告</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt4">公司资料</dt>
+		<dd><a href="http://stockdata.stock.hexun.com/gszl/s600016.shtml " id="a_leftmenu_dt4_1" target="_blank">公司简介</a></dd>
+  	    <dd><a href="http://stockdata.stock.hexun.com/gszl/fhrz-600016.shtml" id="a_leftmenu_dt4_2" target="_blank">分红融资</a></dd>
+  	    <dd><a href="http://stockdata.stock.hexun.com/gszl/srfb-600016.shtml" id="a_leftmenu_dt4_3" target="_blank">收入分布</a></dd>
+  	    <dd><a href="http://stockdata.stock.hexun.com/gszl/zbyz-600016.shtml" id="a_leftmenu_dt4_4" target="_blank">资本运作</a></dd>
+  	    <dd><a href="http://stockdata.stock.hexun.com/gszl/ggml-600016.shtml" id="a_leftmenu_dt4_5" target="_blank">高管名录</a></dd>
+  	    <dd><a href="http://stockdata.stock.hexun.com/zrbg/stock_bg.aspx?code=600016" id="a_leftmenu_dt4_6" target="_blank">社会责任</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt3">网友互动</dt>
+		<dd>
+			<a href="http://guba.hexun.com/600016,guba.html" target="_blank">股吧</a></dd>
+		<dd>
+			<a href="http://bbs.hexun.com/stock/board_5_all_1_d.html" target="_blank">论坛</a></dd>
+		<dd>
+			<a href="http://salon.hexun.com/" target="_blank">沙龙</a></dd>
+		<dd>
+			<a href="http://fblog.hexun.com/" target="_blank">财经博客</a></dd>
+	</dl>
+	<!--<dl id="zgmf">
+		<dt stadus="hidden" id="leftmenu_dt27"><a href="http://mf.hexun.com/" id="leftmenu_dt27_1" target="_blank">
+				智股魔方</a></dt>
+	</dl>-->
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt7">资金流向</dt>
+		<dd>
+			<a href="http://vol.stock.hexun.com/600016.shtm" id="leftmenu_dt7_1" target="_blank">
+				实时资金流向</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Close/share/Info.aspx?rank=3&code=600016#bb" id="leftmenu_dt7_2" target="_blank">
+				盘后资金分析</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Now/Industry/InFlow.shtml?rank=2#bb" id="leftmenu_dt7_3"
+				target="_blank">行业资金流向排名</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Now/Share/InFlow.shtml?rank=3#bb" id="leftmenu_dt7_4"
+				target="_blank">个股资金流向排名</a></dd>
+		<dd>
+			<a href="http://vol.stock.hexun.com/Now/Index/Info.shtml#bb" id="leftmenu_dt7_5" target="_blank">
+				全市场资金流向</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt15" style="color:red">财务评估</dt>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/stocktotal.aspx?code=600016" id="leftmenu_dt15_6" target="_blank">
+				个股财务评估</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/AMarketOverview.aspx" id="leftmenu_dt15_1" target="_blank">
+				总体市场</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/IndustryOverview.aspx?itype=4" id="leftmenu_dt15_2"
+				target="_blank">标准行业</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/IndustryOverview.aspx?itype=1" id="leftmenu_dt15_3"
+				target="_blank">ICB行业</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/IndustryOverview.aspx?itype=6" id="leftmenu_dt15_4"
+				target="_blank">地域板块</a></dd>
+		<dd>
+			<a href="http://pinggu.stock.hexun.com/StockOverview.aspx" id="leftmenu_dt15_5" target="_blank">
+				个股排行</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt24"><a href="http://stockdata.stock.hexun.com/lhb/gg600016.shtml" id="leftmenu_dt24_1" target="_blank">
+				龙虎榜</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt12">关 注 度</dt>
+		<dd>
+			<a href="http://focus.stock.hexun.com/600016.html" id="leftmenu_dt12_1" target="_blank">
+				民生银行
+				关注度</a></dd>
+		<dd>
+			<a href="http://focus.stock.hexun.com/index.html" id="leftmenu_dt12_2" target="_blank">
+				股票关注度排行</a></dd>
+		<dd>
+			<a href="http://focus.stock.hexun.com/industry.html" id="leftmenu_dt12_3" target="_blank">
+				行业关注度排行</a></dd>
+		<dd>
+			<a href="http://focus.stock.hexun.com/market.html" id="leftmenu_dt12_4" target="_blank">
+				Ａ股市场关注度</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt6">价值评估</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jspg_600016.shtml" id="a_leftmenu_dt6_1">
+				技术评估</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jzpg_600016.shtml" id="a_leftmenu_dt6_3">
+				价值评估</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zyfb_600016.shtml" id="a_leftmenu_dt6_5">
+				收入分布</a></dd>
+	</dl>
+	<dl id="jgcc">
+		<dt stadus="hidden" id="leftmenu_dt25"><a href="http://stockdata.stock.hexun.com/jgcc/s600016.shtml" id="leftmenu_dt25_1" target="_blank">
+				机构持仓</a></dt>
+	</dl>
+	<dl id="rzrqNav">
+		<dt stadus="hidden" id="leftmenu_dt17"><a href="/rzrq/s600016.shtml" id="a_leftmenu_dt17_1" target="_blank">
+				融资融券</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt16"><a href="http://stockdata.stock.hexun.com/dzjy/600016.shtml" id="a_leftmenu_dt16_1" target="_blank">
+				大宗交易</a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt26"><a href="http://stockdata.stock.hexun.com/zlkp/s600016.shtml" id="a_leftmenu_dt26_1" target="_blank">
+				<font color="#ff0000">主力控盘</font></a></dt>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt8">股权分析</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_gbjg_600016.shtml" id="a_leftmenu_dt8_1">
+				股本结构</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_sdgd_600016.shtml" id="a_leftmenu_dt8_2">
+				十大股东</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_sdltgd_600016.shtml" id="a_leftmenu_dt8_3">
+				十大流通股东</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_gg_600016.shtml" id="a_leftmenu_dt8_4">
+				公司高管</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_jjcg_600016.shtml" id="a_leftmenu_dt8_5">
+				基金持股</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_cgjzd_600016.shtml" id="a_leftmenu_dt8_6">
+				股东人数</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt9">分红融资</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_bgqfpya_600016.shtml" id="a_leftmenu_dt9_1">
+				分配预案</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_fhzzgb_600016.shtml" id="a_leftmenu_dt9_2">
+				分红/转增股本</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_pg_600016.shtml" id="a_leftmenu_dt9_3">
+				配股</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zf_600016.shtml" id="a_leftmenu_dt9_4">
+				增发</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_rz_600016.shtml" id="a_leftmenu_dt9_5">
+				转债</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_scfx_600016.shtml" id="a_leftmenu_dt9_6">
+				首次发行</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt10">财务数据</dt>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zxcwzb_600016.shtml" id="a_leftmenu_dt10_1">
+				最新财务</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2008en/zxcwzb.aspx?stockid=600016" id="a_leftmenu_dt10_11" target="_blank">
+				ENGLISH</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_cwbl_600016.shtml" id="a_leftmenu_dt10_2">
+				财务比率</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zcfz_600016.shtml" id="a_leftmenu_dt10_3">
+				资产负债</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_lr_600016.shtml" id="a_leftmenu_dt10_4">
+				利润表</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_xjll_600016.shtml" id="a_leftmenu_dt10_5">
+				现金流量</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zysrfb_600016.shtml" id="a_leftmenu_dt10_6">
+				主营收入</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_zcjz_600016.shtml" id="a_leftmenu_dt10_7">
+				资产减值</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_yszk_600016.shtml" id="a_leftmenu_dt10_8">
+				应收帐款</a></dd>
+		<dd>
+			<a href="http://stockdata.stock.hexun.com/2009_qtyszk_600016.shtml" id="a_leftmenu_dt10_9">
+				其他应收帐款</a></dd>
+	</dl>
+	<dl>
+		<dt stadus="hidden" id="leftmenu_dt11">宏观数据</dt>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml" id="leftmenu_dt11_1">宏观数据首页</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=A" id="leftmenu_dt11_2">国民经济核算</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=B" id="leftmenu_dt11_3">价格指数</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=C" id="leftmenu_dt11_4">财政税收</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=D" id="leftmenu_dt11_5">金融保险</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=E" id="leftmenu_dt11_6">三大产业</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=F" id="leftmenu_dt11_7">人口与就业</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=G" id="leftmenu_dt11_8">行业数据</a></dd>
+		<dd>
+			<a href="http://mac.hexun.com/Default.shtml?id=H" id="leftmenu_dt11_9">其他数据</a></dd>
+		<dd>
+			<a href="http://calendar.hexun.com/area/dqzb_110000.shtml" id="leftmenu_dt11_10">地区宏观数据</a></dd>
+	</dl>
+	  	 <dl id="cyl">
+  	<dt stadus="hidden" id="leftmenu_dt55"><a href="http://industry.hexun.com/" target="_blank">产业链</a></dt>
+  </dl>
+	<!--
+  <dl>
+  	<dt class="dt_closed"><a href="http://stockdata.stock.hexun.com/dynamic/default_2008.aspx?stockid=600016" target="_blank">旧版行情</a></dt>
+  </dl>
+  -->
+	<!--存放 url: stockid-->
+	<input type=hidden id="inc_leftmenuHidden" value="600016" NAME="inc_leftmenuHidden"/>
+</div>
+<script language="javascript">
+	SetLeftMenu_stockcode();
+	HYRequest.stockcode = '600016';
+</script>
+<script src="/2008/js/caidan.js"></script>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<!--合作方式-->
+<div id="mail_sub"><strong>数据合作电话</strong><br />
+	<img src="/2008/img/photo.gif" width="10" height="9" />
+	<span class="gray">010-85650704</span><br />
+	<strong>意见反馈</strong><br />
+	<img src="/2008/img/mail.gif" width="11" height="8" /> <a href="mailto:hrstock@staff.hexun.com" class="gray">
+		hrstock#staff<br />
+		.hexun.com </a>
+	<span style="color:#666666; font-size:11px;">(注：发送时将#替换成@)</span>
+</div>
+<!--合作方式end-->
+
+					<!-- caidan end -->
+				</div>
+				<div id="rightpart">
+					<div id="stocktitle">
+						<div id="title"><h3>简称：民生银行 代码：600016</h3>
+						</div>
+					</div> <!-- stocktitle end -->
+					<div class="box18"><a href="/2009_zdsxcx2.shtml" target="_blank"><img src="/2008/img/qbssgs.gif"/></a></div>
+					<!-- zaiyao end -->
+					<div id="zaiyaocontent">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="web2">
+							<tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206283810.shtml">民生银行：第七届董事会第十六次会议决议公告</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\628\1206283810.PDF">查看PDF公告</a></th><th class="add1_1">2019-05-20</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206253871.shtml">民生银行：关于发行无固定期限资本债券获得中国银保监会批准的公告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\625\1206253871.PDF">查看PDF公告</a></td><td class="add2_1">2019-05-10</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206165328.shtml">民生银行：第七届董事会第十五次会议决议公告</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\616\1206165328.PDF">查看PDF公告</a></th><th class="add1_1">2019-04-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206165329.shtml">民生银行：2019年第一季度报告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\616\1206165329.PDF">查看PDF公告</a></td><td class="add2_1">2019-04-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206165330.shtml">民生银行：关于召开2018年年度股东大会、2019年第二次A股类别股东大会和2019年第二次H股类别股东大会的通知</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\616\1206165330.PDF">查看PDF公告</a></th><th class="add1_1">2019-04-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206165331.shtml">民生银行：关于鸿泰鼎石资产管理有限责任公司2019年度非授信类关联交易预算的独立董事意见</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\616\1206165331.PDF">查看PDF公告</a></td><td class="add2_1">2019-04-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206165332.shtml">民生银行：关联交易公告</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\616\1206165332.PDF">查看PDF公告</a></th><th class="add1_1">2019-04-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206165333.shtml">民生银行：第七届监事会第十五次会议决议公告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\616\1206165333.PDF">查看PDF公告</a></td><td class="add2_1">2019-04-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206165334.shtml">民生银行：独立董事关于会计政策变更的独立意见</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\616\1206165334.PDF">查看PDF公告</a></th><th class="add1_1">2019-04-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206108119.shtml">民生银行：关于股东股份解押、质押的公告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\610\1206108119.PDF">查看PDF公告</a></td><td class="add2_1">2019-04-26</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1206053349.shtml">民生银行：第七届监事会第十四次会议决议公告</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\605\1206053349.PDF">查看PDF公告</a></th><th class="add1_1">2019-04-19</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969034.shtml">民生银行：第七届董事会第十四次会议决议公告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969034.PDF">查看PDF公告</a></td><td class="add2_1">2019-03-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969035.shtml">民生银行：2018年度内部控制评价报告</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969035.PDF">查看PDF公告</a></th><th class="add1_1">2019-03-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969036.shtml">民生银行：2018年年度报告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969036.PDF">查看PDF公告</a></td><td class="add2_1">2019-03-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969037.shtml">民生银行：2018年年度报告摘要</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969037.PDF">查看PDF公告</a></th><th class="add1_1">2019-03-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969038.shtml">民生银行：审计报告及财务报告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969038.PDF">查看PDF公告</a></td><td class="add2_1">2019-03-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969039.shtml">民生银行：第七届监事会第十三次会议决议公告</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969039.PDF">查看PDF公告</a></th><th class="add1_1">2019-03-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969040.shtml">民生银行：2018年度会计政策变更事项说明的专项报告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969040.PDF">查看PDF公告</a></td><td class="add2_1">2019-03-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969041.shtml">民生银行：独立董事关于会计政策变更的独立意见</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969041.PDF">查看PDF公告</a></th><th class="add1_1">2019-03-30</th></tr><tr><td class="add2"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969042.shtml">民生银行：前次募集资金使用情况报告的鉴证报告</a></td><td class="add2_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969042.PDF">查看PDF公告</a></td><td class="add2_1">2019-03-30</td></tr><tr><th class="add1"><a target="_blank" href="http://stockdata.stock.hexun.com/txt/stock_detail_txt_1205969043.shtml">民生银行：关于中国民生银行股份有限公司前次募集资金使用情况报告</a></th><th class="add1_1"><a target="_blank" href="http://download.hexun.com/ftp/all_stockdata_2009/all/120\596\1205969043.PDF">查看PDF公告</a></th><th class="add1_1">2019-03-30</th></tr>
+						</table>
+					</div> <!-- zaiyaocontent end -->
+					<div class="box19"><a href="/2008/ggqw.aspx?page=1&stockid=600016"><img src="/2008/img/sy.gif" border="0" align="absmiddle" /></a>&nbsp;<a href='/2008/ggqw.aspx?page=8&stockid=600016'><img src='/2008/img/syy.gif' border='0' align='absmiddle' /></a>&nbsp;<a href='/2008/ggqw.aspx?page=10&stockid=600016'><img src='/2008/img/xyy.gif' border='0' align='absmiddle' /></a>&nbsp;<a href="/2008/ggqw.aspx?page=121&stockid=600016"><img src="/2008/img/my.gif" border="0" align="absmiddle" /></a>&nbsp;<strong>9/121</strong>&nbsp;转到&nbsp;<input id="textfield" type="text" size="4" />&nbsp;<img onclick='goPage("121","/2008/ggqw.aspx?stockid=600016")' style="cursor: pointer;" src="/2008/img/go.gif" border="0" align="absmiddle" /></div>
+				</div>
+				<div class="clear"></div>
+			</div> <!-- gegu_content end -->
+			<!-- footer --><div class="clear"></div>
+
+			<!-- footer end -->
+			<div class="clear"></div>
+		</div>
+		<!-- head -->
+			<div style="clear:both"></div>
+
+<link rel="stylesheet" type="text/css" href="https://img.hexun.com/standardfootandhead/2015/css/footer_v1.css" />
+<div class="footer_2014">
+
+	<div class="bt_pd_nav clearfix">
+		 <dl class="pd_paths">
+		 	<dt><span>频<br/>道</span></dt>
+			<dd>
+				<p><a href="http://news.hexun.com/" target="_blank">新闻</a><a href="http://stock.hexun.com/" target="_blank">股票</a><a href="http://funds.hexun.com/" target="_blank">基金</a><a href="http://gold.hexun.com/" target="_blank" class="no_mr">黄金</a></p>
+				<p><a href="http://forex.hexun.com/" target="_blank">外汇</a><a href="http://futures.hexun.com/" target="_blank">期货</a><a href="http://insurance.hexun.com/" target="_blank">保险</a><a href="http://bank.hexun.com/" target="_blank" class="no_mr">银行</a></p>
+				<p><a href="http://money.hexun.com/" target="_blank">理财</a><a href="http://bond.hexun.com/" target="_blank">债券</a><a href="http://iof.hexun.com/" target="_blank">互金</a><a href="http://opinion.hexun.com/" target="_blank" class="no_mr">评论</a></p>
+			</dd>
+		 </dl>
+
+		 <dl class="jy_paths">
+		 	<dt><span>交<br/>易</span></dt>
+			<dd>
+				<p><a href="http://licaike.hexun.com/" target="_blank"><img alt="" src="http://img.hexun.com/standardfootandhead/2015/img/lck_logo.jpg" /></a><a href="http://www.fangxinbao.com/" target="_blank"><img alt="" src="http://img.hexun.com/standardfootandhead/2015/img/fxb_logo.jpg" /></a><a href="http://pxpt.hexun.com/index.html" target="_blank" class="no_mr"><img alt="" src="http://img.hexun.com/standardfootandhead/2015/img/tzxy_logo.jpg" /></a></p>
+				<p class="jy_mt11"><a href="http://c.hexun.com/" target="_blank"><img alt="" src="http://img.hexun.com/standardfootandhead/2015/img/clh_logo.jpg" /></a><a href="http://tg.hexun.com/" target="_blank"><img alt="" src="http://img.hexun.com/standardfootandhead/2015/img/tgz_logo.jpg" /></a><a href="http://epay.hexun.com/" target="_blank" class="no_mr"><img alt="" src="http://img.hexun.com/standardfootandhead/2015/img/hxqb_logo.jpg" />
+</a></p>
+			</dd>
+		 </dl>
+
+		 <dl class="yd_paths">
+		 	<dt>
+		 		<span class="yd_i"></span>
+		 	</dt>
+		 	<dd>
+		 		<p style="width: 100px; line-height: 30px; float: left;">
+		 			<a style="font-size: 16px; line-height: 30px;font-weight: bold;" href="http://news.hexun.com/2015/znxz/?utm_campaign=web_all_top" target="_blank">财经客户端</a>
+		 			<a style="font-size: 16px;line-height: 30px; font-weight: bold;" href="http://3g.hexun.com/download_forex/" target="_blank">外汇客户端</a>
+		 			<a style="font-size: 16px;line-height: 30px; font-weight: bold;" href="http://futures.hexun.com/2019/futures/" target="_blank">期货客户端</a>
+		 		</p>
+		 		<p style="width: 150px; float: left;">
+		 			<img alt="" src="http://img.hexun.com/img/hxappFooter.png"></p>
+		 	</dd>
+		 </dl>
+
+	</div>
+
+	<div class="footerBox_2014"><a href="http://cvs.hexun.com/feedback/support.htm" target=_blank  id="hexunUserSuggest">和讯恭候您的意见</a> - <a href="http://corp.hexun.com/contact/index.html" target=_blank>联系我们</a> - <a href="http://corp.hexun.com/default/index.html" target=_blank>关于我们</a> - <a href="http://corp.hexun.com/adcenter/index.html" target=_blank>广告服务</a>
+	<div id="channelCopy"><script type="text/javascript">document.write("违法和不良信息举报电话：010-85650899 客服电话：010-85650688 传真：010-85650844 邮箱：yhts@staff.hexun.com");</script><br>本站郑重声明：和讯公司系政府批准的证券投资咨询机构[ZX0005]。所载文章、数据仅供参考，投资有风险，选择需谨慎。<a href="http://corp.hexun.com/sm/" target="_blank">风险提示</a><br>Copyright 和讯网 北京和讯在线信息咨询服务有限公司 All Rights Reserved 版权所有 复制必究</div>
+<script src="https://img.hexun.com/zl/hx/channelCopy.js"></script>
+</div>
+
+</div>
+
+
+<script src="https://utrack.hexun.com/track/track_hx.js"></script>
+<script src="https://web.hexun.com/pc/js/inc_2015_new.js"></script>
+<script type="text/javascript">
+(function(){
+	//全站通发广告
+	var reg=/\/\d{9}(_\d+)?.(html|html\?\w*)$/;
+	if(reg.test(location.href) && location.href.indexOf('crudeoil')<0){
+	   document.write('<script type="text/javascript" src="https://itv.hexun.com/lbi-html/ly/2011/allPages/tempAd.js"><\/script>');
+	}
+})()
+</script>
+
+<!--script language="javascript" src="https://img.hexun.com/2016/trace/tracehexun.js"></script-->
+
+<script type="text/javascript">var uweb_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + uweb_protocol + "utrack.hexun.com/dp/hexun_uweb.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<!--<script language="javascript" src="https://img.hexun.com/zl/hx/index/js/appDplus.js"></script>-->
+<script language="javascript" src="https://img.hexun.com/2016/pc/ad/bannercode/js/201808070942/appDplus.js"></script>
+<script language="javascript" src="https://web.hexun.com/pc/modules/hexunhm.js"></script>
+			<!-- head end -->
+	</body>
+	<!--google 统计-->
+		<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2167933-20']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!--2012-10-15-->
+<!--<script type="text/javascript" src="http://60.28.251.182/adtrack.js"></script> -->
+
+		<!--end google 统计-->
+</html>
