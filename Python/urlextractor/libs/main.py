@@ -45,7 +45,6 @@ sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__name__)), "config
 from config import config
 from config.ADOConstants import *
 
-
 _ADOCONNECTION = config.ADOCONNECTION
 _ADODBCOMMAND = config.ADODBCOMMAND
 _BASE_URL = config.BASE_URL
@@ -172,20 +171,12 @@ def __get_url_table(conn):
     """
     query = "SELECT * FROM PDF网址"
     (rs, result) = conn.Execute(query)
-    report_list = []
+    reportURL_list = []
     while not rs.EOF:
-        stock_id = rs.Fields("股票代码").Value
-        stock_name = rs.Fields("股票名称").Value
-        season = rs.Fields("年度").Value
-        report_type = rs.Fields("报告编号").Value
         url = rs.Fields("网址").Value
-        report_list.append({"stock_id": stock_id,
-                            "stock_name": stock_name,
-                            "season": int(season),
-                            "report_type": int(report_type),
-                            "url": url})
+        reportURL_list.append(url)
         rs.MoveNext()
-    return rs, report_list
+    return rs, reportURL_list
 
 
 _CONN = __get_conn()
@@ -193,8 +184,9 @@ _INSERT, _PARAMS = __get_command(_CONN)
 _REPORT_TYPE = __get_report_type(_CONN)
 _STOCK_IDS = __get_stock_id(_CONN)
 _LATEST_YEAR = __get_latest_year(_CONN)
-(_URLTABLE, _REPORT_LIST) = __get_url_table(_CONN)
+(_URLTABLE, _REPORTURL_LIST) = __get_url_table(_CONN)
 _TITLE_PATTERN = config.TITLE_PATTERN.format(4, *_REPORT_TYPE.keys())
+
 
 def singleton(cls, *args, **kwargs):
     _instance = []
@@ -219,6 +211,7 @@ class URLExtractor:
         # dictionary. Prepare for insertion
         self.report_list = []
         self.__handle()
+        self.__refactor()
 
     @staticmethod
     def __get_page(src):
@@ -263,6 +256,19 @@ class URLExtractor:
         return src
 
     @staticmethod
+    def __refactor():
+        global _CONNS, _USERAGENT, _CONN, _INSERT, _PARAMS, _REPORT_TYPE, _STOCK_IDS, _URLTABLE, _REPORTURL_LIST
+        _CONN.Close()
+        _URLTABLE.Close()
+        _CONNS.clear()
+        _REPORTURL_LIST.clear()
+        _USERAGENT = None
+        _INSERT = None
+        _PARAMS = None
+        _REPORT_TYPE = None
+        _STOCK_IDS = None
+
+    @staticmethod
     def __update(report_info):
         """
         将URL写入Access中
@@ -288,8 +294,7 @@ class URLExtractor:
                 "report_type": report_type,
                 "url": url_dict[title]["URL"]
             }
-            if report_info not in _REPORT_LIST:
-                self.report_list.append(report_info)
+            self.report_list.append(report_info)
         self.rurl_list.clear()  # 释放内存空间
         logging.info("released memory space from rurl_list")
 
@@ -330,14 +335,14 @@ class URLExtractor:
             url = url_td.contents[0].attrs["href"]
             redate = str(date_td.string)  # 发表日期
             year = int(re.compile(r"(?P<year>\d{4})").search(str(title)).group("year"))  # 报告年份
-            if year >= 2010:
-                # 在2010年之后报告不收入字典类
-                flag += 1
-                self.rurl_list.append({str(title):
-                                           {"ReleasedDate": redate,
-                                            "Year": year,
-                                            "URL": url}
-                                       })
+            if year >= _LATEST_YEAR:
+                if url not in _REPORTURL_LIST:
+                    flag += 1
+                    self.rurl_list.append({str(title):
+                                               {"ReleasedDate": redate,
+                                                "Year": year,
+                                                "URL": url}
+                                           })
         if not flag:
             # 此页由于年份过久而没有匹配对象
             flag -= 1
@@ -356,15 +361,11 @@ class URLExtractor:
             src = self.__request(_INIT_REQUEST.format(self.stock_id))
             (url, last_page) = self.__get_page(src)
             self.__cycle_page(url, last_page)
-
-            self.__analy_rurl()
-            logging.info("prepare to write {}".format(stock_id))
-
-            for report_info in self.report_list:
-                self.__update(report_info)
-            self.report_list.clear()
-
-            logging.info("released memory space")
-            logging.info("{} finished".format(stock_id))
-        _URLTABLE.Close()
-        _CONN.Close()
+            if self.rurl_list:
+                self.__analy_rurl()
+                logging.info("prepare to write {}".format(stock_id))
+                for report_info in self.report_list:
+                    self.__update(report_info)
+                self.report_list.clear()
+                logging.info("released memory space from report_list")
+                logging.info("{} finished".format(stock_id))
