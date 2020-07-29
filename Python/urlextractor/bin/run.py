@@ -14,6 +14,6 @@ logging.basicConfig(filename="log.log",
                     level=logging.INFO)  # Setup basic config for a root logger
 
 if __name__ == "__main__":
-    logging.info("Script started")
+    logging.info("Script started\n")
     main.URLExtractor()  # initialize an instance of URLExtractor Class
-    logging.info("Script finished")
+    logging.info("Script finished\n")
