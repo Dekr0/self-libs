@@ -18,7 +18,8 @@ _DATABASE - File path of the database
 
 _DSN - A connection string (include several parameters. i.e. ODBC driver)
 
-_INIT_REQUEST - Initial URL of report release page. Can be used as a formatted string to visit page of a specific stock
+_INIT_REQUEST - Initial URL of report release page. Can be used as a formatted string to visit page of a specific stock.
+This initial URL always points to a first page of the report release webpage of a specific stock
 
 _PARSER - Name of the html parser being used in BS4
 
@@ -64,6 +65,7 @@ def __get_command(conn):
     :param conn: ADO Connection object instance
     :return:
     """
+
     cmd = client.Dispatch(_ADODBCOMMAND)  # Create an ADO Command object instance
     cmd.ActiveConnection = conn  # Attach to an ADO Connection object instance
     cmd.CommandType = adCmdText  # Type of command being used
@@ -88,6 +90,7 @@ def __get_command(conn):
     for i in params.keys():
         cmd.Parameters.Append(params[i])
     cmd.Prepared = True  # Ready to be used
+
     return cmd, params
 
 
@@ -96,16 +99,20 @@ def __get_conn():
     Initialize a connection object which hold the connection with the database. Only one connection object is allowed
     :return:
     """
+
     if not _CONNS:
         try:
             conn = client.Dispatch(_ADOCONNECTION)
             conn.Open(_DSN)
             if conn.State == adStateOpen:  # Check whether the connection is open
                 _CONNS.append(conn)
+
                 return _CONNS[0]
+
             raise Exception
         except Exception as ex:
             print("Failed to connect ot database: {}".format(ex))
+
     return _CONNS[0]
 
 
@@ -116,9 +123,11 @@ def __get_latest_year(conn):
     :param conn:
     :return:
     """
+
     query = "SELECT MAX(年度) AS latest_year FROM PDF网址"
     (rs, result) = conn.Execute(query)
     latest_year = int(rs.Fields("latest_year").Value)
+
     return latest_year
 
 
@@ -129,13 +138,16 @@ def __get_stock_id(conn):
     :param conn:
     :return:
     """
+
     sc = dict()
     query = "SELECT 股票代码, 股票名称 FROM 股票代码"
     (rs, result) = conn.Execute(query)
+
     while not rs.EOF:
         sc[rs.Fields("股票代码").Value] = rs.Fields("股票名称").Value
         rs.MoveNext()
     rs.Close()
+
     return sc
 
 
@@ -146,13 +158,16 @@ def __get_report_type(conn):
     :param conn:
     :return:
     """
+
     rt = dict()
     query = "SELECT * FROM 报告类型"
     (rs, result) = conn.Execute(query)
+
     while not rs.EOF:
         rt[rs.Fields("报告类型").Value] = int(rs.Fields("报告编码").Value)
         rs.MoveNext()
     rs.Close()
+
     return rt
 
 
@@ -169,13 +184,16 @@ def __get_url_table(conn):
     :param conn:
     :return:
     """
+
     query = "SELECT * FROM PDF网址"
     (rs, result) = conn.Execute(query)
     reportURL_list = []
+
     while not rs.EOF:
         url = rs.Fields("网址").Value
         reportURL_list.append(url)
         rs.MoveNext()
+
     return rs, reportURL_list
 
 
@@ -211,36 +229,48 @@ class URLExtractor:
         # dictionary. Prepare for insertion
         self.report_list = []
         self.__handle()
+        logging.info("Process finish")
+
         self.__refactor()
+        logging.info("Refactored and cleaned up\n")
 
     @staticmethod
     def __get_page(src):
         """
         Get the "page" parameter from the URL of webpage where all reports of a specific stock are released. From the
         source code, this URL is different from the URL (refereed as initial URL) that is used to request source from
-        the webpage. The initial URL
+        the webpage. The initial URL does not contain the part that is "page=...&stockid=...".
+
+        "page" and "stockid" act as parameters which allow you to navigate specific page of the report release webpage
+        by specific stock. The only parameter needed is page since all the stock ID is already known.
         :return:
         """
-        # with open(_SRC.format(code)) as f:
+
+        # Search tag <a> with specific attributes (href). \d{2,3} helps to ignore one of tag <a> with attribute href
+        # whose URL has single digit (means first page) in page parameter
+
         soup = BeautifulSoup(src, "lxml")
         tag_a = soup.find(name="a", attrs={"href": re.compile(r"^/200\d/ggqw.aspx\?(?:page=\d{2,3}&stockid=\d{6})"
                                                               "|(?:stockid=\d{6}&page=\d{2,3})")})
-        # Need to be optimized
 
         raw_url = tag_a.attrs["href"]
         pattern = re.compile(r"page=(?P<last_page>\d{2,3})")
-        last_page = pattern.search(raw_url).group("last_page")  # might have problem
-        pageurl = pattern.sub("page={}", raw_url)  # i.e: /2008/ggqw.aspx?page={}&stockid=code
-        url = _BASE_URL.format(pageurl)  # i.e: http://stockdata.stock.hexun.com/2008/ggqw.aspx?page={}&stockid=code
+        last_page = pattern.search(raw_url).group("last_page")
+
+        pageurl = pattern.sub("page={}", raw_url)  # Replace the "page" parameter with "{}" so it can be formatted
+
+        # Attach the formatted URL to URL of the main page of stockdata.stock.hexun.com
+        url = _BASE_URL.format(pageurl)
 
         return url, int(last_page)
 
     @staticmethod
     def __request(referrer):
         """
-        向网站发送请求
+        Sending request to the website and return its source code
         :return:
         """
+
         header = {
             "user-agent": _USERAGENT,
             "referrer": referrer
@@ -250,18 +280,24 @@ class URLExtractor:
         src = response.text
         response.close()
 
-        # with open(_SRC.format(code), "wb") as f:
-        #     f.write(response.content)
-
         return src
 
     @staticmethod
     def __refactor():
+        """
+        Refactor
+        Close all the RecordSet objects; disconnect with the database; empty all the list and the dictionary consisted
+        of large amount information.
+        :return:
+        """
+
         global _CONNS, _USERAGENT, _CONN, _INSERT, _PARAMS, _REPORT_TYPE, _STOCK_IDS, _URLTABLE, _REPORTURL_LIST
-        _CONN.Close()
         _URLTABLE.Close()
+        _CONN.Close()
+
         _CONNS.clear()
         _REPORTURL_LIST.clear()
+
         _USERAGENT = None
         _INSERT = None
         _PARAMS = None
@@ -271,22 +307,29 @@ class URLExtractor:
     @staticmethod
     def __update(report_info):
         """
-        将URL写入Access中
+        Insert report information into database
         :return:
         """
+
         for i in _PARAMS.keys():
             _PARAMS[i].Value = report_info[i]
         _INSERT.Execute()
 
     def __analy_rurl(self):
         """
-        整理/处理URL，股票名称，股票代码，报告类型，整备写入
+        Analyze the raw report information from the source code. Filter, sort and store each of them into a dictionary.
+        A list will hold all the dictionary.
         :return:
         """
+
         for url_dict in self.rurl_list:
             title = list(url_dict.keys())[0]
+
             pattern = "(?P<type>{}|{}|{}|{})".format(*_REPORT_TYPE.keys())
-            report_type = _REPORT_TYPE[re.search(pattern, title).group("type")]
+            report_type = _REPORT_TYPE[re.search(pattern, title).group("type")]  # Get which type of report is it
+
+            # The key of the dictionary is correspond to the name of the unfilled, customized parameter attached to the
+            # Command object that is used for insertion.
             report_info = {
                 "stock_id": self.stock_id,
                 "stock_name": _STOCK_IDS[self.stock_id],
@@ -295,38 +338,53 @@ class URLExtractor:
                 "url": url_dict[title]["URL"]
             }
             self.report_list.append(report_info)
-        self.rurl_list.clear()  # 释放内存空间
+
+        self.rurl_list.clear()
         logging.info("released memory space from rurl_list")
 
     def __cycle_page(self, url, last_page):
+        """
+        Flip page in the report release webpage. Get the title, URL, and the release date of the report.
+        The stop factor of this process depends on the latest year of all report in the database.
+
+        **Note** - might rewrite this method with recursion
+
+        :param url:
+        :param last_page:
+        :return:
+        """
+
         logging.info("start cycling page")
         page = 1
+
         while page < last_page:
             src = self.__request(url.format(page))
-            flag = self.__get_url(src)  # 未处理的URL和发表日期
+            flag = self.__get_url(src)
             page += 1
+
             if not flag:
-                # 此页没有匹配对象
+                # Either no matched report in this page or matched report already in the database
                 continue
+
             elif flag == -1:
-                # 此页由于年份过久而没有匹配对象，并不再往下进行搜索
+                # If the current page only contains report whose year is older than the latest year, then stop
+                # this process.
                 break
+
             time.sleep(1)
+
         logging.info("{} pages are cycled".format(page))
 
     def __get_url(self, src):
         """
-        抓取下载URL
+        Get the title, URL, and the release date of the report, and return the stop fator of the page flipping process.
         :return:
         """
+
         soup = BeautifulSoup(src, "lxml")
         titles = soup.find_all(string=re.compile(_TITLE_PATTERN))
-        """
-        r"\d{4}年({第一季度}|{半年度}|{第三季度}|{年度})报告(?!摘要|补充公告|（?正文）?)(?:（?全文）?)?"
-        """
         flag = 0
         if not titles:
-            # 此页没有匹配对象
             return flag
         for title in titles:
             title_td = title.parent.parent
@@ -344,7 +402,6 @@ class URLExtractor:
                                                 "URL": url}
                                            })
         if not flag:
-            # 此页由于年份过久而没有匹配对象
             flag -= 1
         return flag
 
@@ -353,19 +410,27 @@ class URLExtractor:
         Essential logical structure of the script
         :return:
         """
+
         for stock_id in _STOCK_IDS.keys():
             logging.info("handling {}".format(stock_id))
             self.stock_id = stock_id
 
-            # Request source code from the webpage where all the report of a specific are released.
+            # Request source code from the webpage where all the report of a specific are released by using the initial
+            # URL
             src = self.__request(_INIT_REQUEST.format(self.stock_id))
+
             (url, last_page) = self.__get_page(src)
+
             self.__cycle_page(url, last_page)
+
             if self.rurl_list:
                 self.__analy_rurl()
                 logging.info("prepare to write {}".format(stock_id))
+
                 for report_info in self.report_list:
                     self.__update(report_info)
+
                 self.report_list.clear()
                 logging.info("released memory space from report_list")
-                logging.info("{} finished".format(stock_id))
+
+            logging.info("{} finished".format(stock_id))
