@@ -34,7 +34,6 @@ class SelectionWindow(QMainWindow):
     def __init__(self, url_list):
         super(SelectionWindow, self).__init__()
 
-        self.button = QPushButton("确认")
 
 
 class ErrorEvents(Exception):
@@ -176,8 +175,6 @@ class Framework(QWidget):
                 rs.MoveNext()
 
             rs.Close()
-
-
 
         except ErrorEvents as ex:
             QMessageBox.about(self, "查询错误", ex.msg)
