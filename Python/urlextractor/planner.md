@@ -2,7 +2,7 @@
 ---
 
 
-## Part 1
+### Part 1
 
 利用 win32com 数据库 (ReportURLData.mdb), 从 表-股票代码 中读取所有股票名称和其名称并储存入字典当中；从 表-报告类型 中读取所有报告类型名称和其编码并储存入字典当中
 
@@ -45,7 +45,7 @@ http://stockdata.stock.hexun.com/2008/ggqw.aspx?page=1&stockid=000002
 ---
 
 
-## Part 2
+### Part 2
 
 创建一个可视化窗口，可以通过其窗口对数据库 (ReportURLData.mdb) 中 表-PDF网址 内的下载链接进行访问。
 
@@ -62,6 +62,5 @@ http://stockdata.stock.hexun.com/2008/ggqw.aspx?page=1&stockid=000002
 报告类型，checkbox，允许多选
 
 在以上信息完成并点击确认后，如果所述的下载链接在数据库存在，下载到本地；不存在，提示没有。
-
 
 ---
