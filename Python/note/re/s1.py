@@ -30,7 +30,6 @@
 
 import re
 
-
 def showResult(matchObjs):
     for matchObj in matchObjs:
         print(matchObj)

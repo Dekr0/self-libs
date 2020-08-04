@@ -1,6 +1,9 @@
 # Hide note folder - random note and test / experiment during learing 
 Python/note
 
+# Hide test folder in urlextractor project - experiment solution and idea during development before implementing
+Python\urlextractor\test
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
