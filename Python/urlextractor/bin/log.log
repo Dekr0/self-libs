@@ -172,3 +172,7 @@
 2020-07-28 11:51:15 AM - INFO - main: 4 pages are cycled
 2020-07-28 11:51:15 AM - INFO - main: 600016 finished
 2020-07-28 11:51:15 AM - INFO - run: Script finished
+2020-07-30 16:37:20 PM - INFO - extractor: Script started
+
+2020-07-30 16:37:20 PM - INFO - main_extractor: handling 000001
+2020-07-30 16:37:21 PM - INFO - main_extractor: start cycling page
