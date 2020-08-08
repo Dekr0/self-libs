@@ -25,7 +25,7 @@ _PARSER - Name of the html parser being used in BS4
 
 _SIZE - Buffer size - for future used
 
-_SRC - Path to temp folder - for future used
+_SRC - Path to reports folder - for future used
 
 _USERAGENT - A faked, randomized useragent for request header
 
@@ -55,7 +55,6 @@ _DSN = config.DSN
 _INIT_REQUEST = config.INIT_REQUEST
 _PARSER = config.PARSER
 _SIZE = 1024
-_SRC = config.SRC
 _USERAGENT = config.USERAGENT
 
 
@@ -275,10 +274,12 @@ class URLExtractor:
             "user-agent": _USERAGENT,
             "referrer": referrer
         }
-
-        response = requests.get(referrer, headers=header)
-        src = response.text
-        response.close()
+        try:
+            response = requests.get(referrer, headers=header)
+            src = response.text
+            response.close()
+        except Exception as ex:
+            logging.critical("Line 282: {}".format(ex))
 
         return src
 
@@ -396,11 +397,7 @@ class URLExtractor:
             if year >= _LATEST_YEAR:
                 if url not in _REPORTURL_LIST:
                     flag += 1
-                    self.rurl_list.append({str(title):
-                                               {"ReleasedDate": redate,
-                                                "Year": year,
-                                                "URL": url}
-                                           })
+                    self.rurl_list.append({str(title): {"ReleasedDate": redate, "Year": year, "URL": url}})
         if not flag:
             flag -= 1
         return flag
@@ -430,7 +427,9 @@ class URLExtractor:
                 for report_info in self.report_list:
                     self.__update(report_info)
 
+                logging.info("{} new reports are updated".format(len(self.report_list)))
                 self.report_list.clear()
                 logging.info("released memory space from report_list")
+
 
             logging.info("{} finished".format(stock_id))
