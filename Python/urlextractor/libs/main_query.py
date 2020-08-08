@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import logging
 import os
 import sys
 
@@ -9,6 +10,7 @@ from libs.gui import show
 from config.config import *
 from config.ADOConstants import *
 from win32com import client
+
 
 _ADOCONNECTION = ADOCONNECTION
 _CONNS = []
@@ -79,4 +81,5 @@ class ReportQuery:
         self.__handle()
 
     def __handle(self):
+
         show(_CONN, REPORT_TYPE)
