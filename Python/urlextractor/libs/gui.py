@@ -1,20 +1,80 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import logging
+import random
 import re
+import requests
 import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__name__)), "config"))
+from config.config import USERAGENT, REPORT_DIR
 from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
+_CONN = None
+_REPORT_DICT = None
+_REPORT_DIR = REPORT_DIR
+
+
+def __open_pdf(title):
+    path = _REPORT_DIR.format(title)
+    if not os.path.exists(path):
+        raise
+
+    os.startfile(path)
+
+
+_OPEN_PDF = __open_pdf
+
+
+def get_url(sql, total):
+    count = 1
+    (rs, result) = _CONN.Execute(sql)
+    url_dict = dict()
+
+    flag = False
+    if total > 1:
+        flag = True
+
+    while not rs.EOF:
+        code = rs.Fields("股票代码").Value
+        name = rs.Fields("股票名称").Value
+        year = int(rs.Fields("年度").Value)
+        rtype_code = int(rs.Fields("报告编号").Value)
+        rtype = list(_REPORT_DICT.keys())[list(_REPORT_DICT.values()).index(rtype_code)]
+        url = rs.Fields("网址").Value
+
+        if not flag:
+            report_title = "{}-{}{}{}报告".format(code, name, year, rtype)
+        else:
+            report_title = "{}-{}{}{}报告({})".format(code, name, year, rtype, count)
+            count += 1
+
+        url_dict[report_title] = url
+        rs.MoveNext()
+
+    rs.Close()
+
+    return url_dict
+
 
 def show(conn, report_dict):
+    global _CONN, _REPORT_DICT
+    _CONN = conn
+    _REPORT_DICT = report_dict
+
     app = QApplication(sys.argv)
-    framework = Framework(conn, report_dict)
+    framework = MainFramework()
+    logging.info("Widget are formed")
     window = QueryWindow(framework)
 
+    logging.info("Show Query Window")
     window.show()
 
+    logging.info("Query Window closed. Script finished")
     sys.exit(app.exec_())
 
 
@@ -23,7 +83,7 @@ class QueryWindow(QMainWindow):
     def __init__(self, widgets):
         super(QueryWindow, self).__init__()
 
-        self.setWindowTitle("Report Query")
+        self.setWindowTitle("报告查询")
         self.resize(250, 100)
 
         self.setCentralWidget(widgets)
@@ -31,35 +91,35 @@ class QueryWindow(QMainWindow):
 
 class SelectionWindow(QMainWindow):
 
-    def __init__(self, url_list):
+    def __init__(self, widgets):
         super(SelectionWindow, self).__init__()
+        self.widgets = widgets
+        self.setWindowTitle("选择指定报告")
+
+        self.widgets.confirm.clicked.connect(self.get_selection)
+
+        self.setCentralWidget(self.widgets)
+
+    @pyqtSlot()
+    def get_selection(self):
+        title = self.widgets.list_view.currentIndex().data()
+        self.close()
+        _OPEN_PDF(title)
 
 
+class MainFramework(QWidget):
 
-class ErrorEvents(Exception):
-    error_dict = {
-        "40": "股票代码和股票名称输入处不可为空",
-        "41": "所输入的股票代码和股票名称不符合查询格式",
-        "42": "年度输入处不可为空",
-        "43": "查询结果不存在"
-    }
+    def __init__(self):
+        super(MainFramework, self).__init__()
 
-    def __init__(self, flag):
-        self.msg = ErrorEvents.error_dict[flag]
-
-
-class Framework(QWidget):
-
-    def __init__(self, conn, report_dict):
-        super(Framework, self).__init__()
-
-        self.conn = conn
-        self.report_dict = report_dict
+        self.sub_framework = None
+        self.selection_window = None
 
         self.__init_completer()
         self.__init_stock_input()
         self.__init_year_input()
-        self.__init_type_selection(report_dict)
+        self.__init_type_selection()
+
         self.button = QPushButton("查询")
         self.layout = QVBoxLayout()
 
@@ -71,6 +131,9 @@ class Framework(QWidget):
         self.layout.addWidget(self.button)
 
         self.setLayout(self.layout)
+
+    def __add_stock(self, iterable):
+        self.model.setStringList(iterable)
 
     def __init_completer(self):
         self.completer = QCompleter()
@@ -106,19 +169,23 @@ class Framework(QWidget):
 
         self.year_box.setLayout(self.year_layout)
 
-    def __init_type_selection(self, report_dict):
+    def __init_type_selection(self):
         self.type_box = QGroupBox("报告类型")
         self.type_layout = QHBoxLayout()
         self.type_combobox = QComboBox()
 
-        self.type_combobox.addItems(report_dict.keys())
+        self.type_combobox.addItems(_REPORT_DICT.keys())
 
         self.type_layout.addWidget(self.type_combobox)
 
         self.type_box.setLayout(self.type_layout)
 
-    def __add_stock(self, iterable):
-        self.model.setStringList(iterable)
+    def __show_selection_window(self, title_list):
+        if not self.sub_framework:
+            self.sub_framework = SubFramework(title_list)
+        if not self.selection_window:
+            self.selection_window = SelectionWindow(self.sub_framework)
+        self.selection_window.show()
 
     @pyqtSlot()
     def block(self):
@@ -147,43 +214,31 @@ class Framework(QWidget):
         stock = self.stock_input.text().strip()
         year = self.year_input.text().strip()
         try:
-            if not stock:
-                raise ErrorEvents("40")
-            if not re.fullmatch("\d{6}-[\w ]+", stock):
-                raise ErrorEvents("41")
-            if not year:
-                raise ErrorEvents("42")
-
             (code, name) = stock.split("-")
-            report_type = self.report_dict[self.type_combobox.currentText()]
+            report_type = _REPORT_DICT[self.type_combobox.currentText()]
 
-            query = r"SELECT * FROM PDF网址 WHERE 股票代码='{}'AND 股票名称='{}' AND 年度={} AND 报告编号={}".format(code
-                                                                                                     , name, int(year),
-                                                                                                     report_type)
+            query = r"SELECT * FROM PDF网址 WHERE 股票代码='{}'AND 股票名称='{}' AND 年度={} AND 报告编号={}" \
+                .format(code, name, int(year), report_type)
             cquery = r"SELECT COUNT(*) AS 数量 FROM ({})".format(query)
-            (com, result) = self.conn.Execute(cquery)
+            (com, result) = _CONN.Execute(cquery)
             count = com.Fields("数量").Value
             com.Close()
 
             if not count:
-                raise ErrorEvents("43")
+                raise
 
-            (rs, result) = self.conn.Execute(query)
-            url_list = []
-            while not rs.EOF:
-                url_list.append(rs.Fields("网址").Value)
-                rs.MoveNext()
+            url_dict = get_url(query, count)
+            self.report_manage(url_dict, count)
 
-            rs.Close()
-
-        except ErrorEvents as ex:
-            QMessageBox.about(self, "查询错误", ex.msg)
+        except Exception as ex:
+            logging.critical(ex)
+            QMessageBox.about(self, "查询错误", "查询结果不存在")
 
     def default_search(self, string, flag):
         query = r"SELECT * FROM 股票代码 WHERE {} LIKE '%{}%'".format(flag, string)
         stock_list = []
 
-        (rs, result) = self.conn.Execute(query)
+        (rs, result) = _CONN.Execute(query)
         while not rs.EOF:
             code = rs.Fields("股票代码").Value
             name = rs.Fields("股票名称").Value
@@ -194,5 +249,58 @@ class Framework(QWidget):
 
         self.__add_stock(stock_list)
 
+    def download_reports(self, title, url):
+        header = {
+            "user-agent": USERAGENT,
+            "referrer": url
+        }
+        try:
+            path = _REPORT_DIR.format(title)
+            if not os.path.exists(path):
+                logging.info("Try to download report from {} to local".format(url))
+                with requests.get(url, headers=header) as res:
+                    with open(path, "wb") as file:
+                        for chunk in res.iter_content(1024):
+                            file.write(chunk)
+        except Exception as ex:
+            logging.critical(ex)
+            QMessageBox.about(self, "下载错误", "无法下载或在本地写入指定报告")
+
     def pinyin_search(self, string):
         pass
+
+    def report_manage(self, url_dict, total):
+        for title, url in url_dict.items():
+            self.download_reports(title, url)
+        try:
+            if total > 1:
+                logging.info("Show Selection Window")
+                self.__show_selection_window(list(url_dict.keys()))
+                logging.info("Show Selection Window Close")
+            else:
+                _OPEN_PDF(list(url_dict.keys())[0])
+        except Exception as ex:
+            logging.critical(ex)
+            QMessageBox.about(self, "本地错误", "无法打开本地的报告")
+
+
+class SubFramework(QWidget):
+
+    def __init__(self, title_list):
+        super(SubFramework, self).__init__()
+
+        self.layout = QVBoxLayout()
+        self.label = QLabel("出现多份拥有相同报告信息但不同网址的报告, 请选择需要查看的报告")
+        self.confirm = QPushButton("确认")
+        self.model = QStringListModel(title_list)
+        self.list_view = QListView()
+        self.button_box = QHBoxLayout()
+
+        self.list_view.setModel(self.model)
+
+        self.button_box.addWidget(self.confirm)
+        self.layout.addWidget(self.label)
+        self.layout.addWidget(self.list_view)
+        self.layout.addLayout(self.button_box)
+
+        self.setLayout(self.layout)
