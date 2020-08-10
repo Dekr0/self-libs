@@ -14,6 +14,7 @@ from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
+
 _CONN = None
 _REPORT_DICT = None
 _REPORT_DIR = REPORT_DIR
@@ -62,6 +63,7 @@ def get_url(sql, total):
 
 
 def show(conn, report_dict):
+
     global _CONN, _REPORT_DICT
     _CONN = conn
     _REPORT_DICT = report_dict
@@ -90,6 +92,11 @@ class QueryWindow(QMainWindow):
 
 
 class SelectionWindow(QMainWindow):
+
+    def __new__(cls, *args, **kwargs):
+        if not hasattr(SelectionWindow, "_instance"):
+            SelectionWindow._instance = QWidget.__new__(cls)
+        return SelectionWindow._instance
 
     def __init__(self, widgets):
         super(SelectionWindow, self).__init__()
@@ -181,10 +188,9 @@ class MainFramework(QWidget):
         self.type_box.setLayout(self.type_layout)
 
     def __show_selection_window(self, title_list):
-        if not self.sub_framework:
-            self.sub_framework = SubFramework(title_list)
-        if not self.selection_window:
-            self.selection_window = SelectionWindow(self.sub_framework)
+        self.sub_framework = SubFramework()
+        self.sub_framework.model.setStringList(title_list)
+        self.selection_window = SelectionWindow(self.sub_framework)
         self.selection_window.show()
 
     @pyqtSlot()
@@ -286,13 +292,18 @@ class MainFramework(QWidget):
 
 class SubFramework(QWidget):
 
-    def __init__(self, title_list):
+    def __new__(cls, *args, **kwargs):
+        if not hasattr(SubFramework, "_instance"):
+            SubFramework._instance = QWidget.__new__(cls)
+        return SubFramework._instance
+
+    def __init__(self):
         super(SubFramework, self).__init__()
 
         self.layout = QVBoxLayout()
         self.label = QLabel("出现多份拥有相同报告信息但不同网址的报告, 请选择需要查看的报告")
         self.confirm = QPushButton("确认")
-        self.model = QStringListModel(title_list)
+        self.model = QStringListModel()
         self.list_view = QListView()
         self.button_box = QHBoxLayout()
 
