@@ -2,10 +2,10 @@
 # -*- coding:utf-8 -*-
 
 import logging
-import os
 import sys
+from os import path
 
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__name__)), "config"))
+sys.path.append(path.abspath(path.join(path.dirname(path.dirname(__name__)), "config")))
 from .ado_util import ADOUtil
 from .gui import show
 
@@ -18,8 +18,7 @@ class ReportQuery(object):
         return ReportQuery._instance
 
     def __init__(self):
-        self.__util = ADOUtil()
         self.__handle()
 
     def __handle(self):
-        show(self.__util.conn, self.__util.get_report_type())
+        show()
