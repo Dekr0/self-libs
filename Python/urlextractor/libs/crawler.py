@@ -1,3 +1,6 @@
+# !/usr/bin/env python
+# -*- coding:utf-8 -*-
+
 """
 
 This is a script (mostly for own use) that will fetch all the download link the report of stock from website
@@ -7,25 +10,33 @@ The script is still under developed.
 
 """
 
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
-
+import json
 import logging
-import os
 import sys
 import re
 import requests
 import time
 from bs4 import BeautifulSoup
+from os import path
 
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__name__)), "config"))
+sys.path.append(path.abspath(path.join(path.dirname(path.dirname(__name__)), "config")))
 from .ado_util import *
 from config.config import *
-
 
 _BASE_URL = BASE_URL
 _INIT_REQUEST = INIT_REQUEST
 _USERAGENT = USERAGENT
+_PHRASE_SET = set()
+
+if not path.exists(PHRASE_LIB):
+    json.dump(_PHRASE_SET, open(PHRASE_LIB, 'w'), indent=4)
+else:
+    _PHRASE_SET = json.load(open(PHRASE_LIB))
+
+
+def collect_phrases(title):
+    phrase = re.search("(?<=：)\w+", title).group()
+    _PHRASE_SET.add(phrase)
 
 
 def get_page(src):
@@ -71,6 +82,10 @@ def request(referrer):
     return src
 
 
+def update_phrases():
+    json.dump(_PHRASE_SET, open(PHRASE_LIB, 'w'), indent=4)
+
+
 class URLCrawler(object):
 
     def __new__(cls, *args, **kwargs):
@@ -81,11 +96,10 @@ class URLCrawler(object):
     def __init__(self):
         self.__util = ADOUtil()
         self.__conn = self.__util.conn
-        self.__insert, self.__params = self.__util.get_command()
+        self.__insert_cmd, self.__insert_params = self.__util.get_insert_command()
         self.__latest_year = self.__util.get_latest_year()
         self.__report_type = self.__util.get_report_type()
         self.__stock_list = self.__util.get_stock_id()
-        self.__url_list = self.__util.get_url_list()
         self.__title_pattern = TITLE_PATTERN.format(4, *self.__report_type.keys())
 
         self.rurl_list = []  # URLs and their un-processed information
@@ -101,22 +115,21 @@ class URLCrawler(object):
         self.__conn.Close()
         self.__report_type.clear()
         self.__stock_list.clear()
-        self.__url_list.clear()
-        self.__insert = None
-        self.__params = None
+        self.__insert_cmd = None
+        self.__insert_params = None
         self.__util = None
 
     def __update(self, report_info):
-        for i in self.__params.keys():
-            self.__params.Value = report_info[i]
-        self.__insert.Execute()
+        for i in self.__insert_params.keys():
+            self.__insert_params[i].Value = report_info[i]
+        self.__insert_cmd.Execute()
 
     def __analy_rurl(self):
         """
         Analyze the raw report information from the source code. Filter, sort and store each of them into a dictionary.
         A list will hold all the dictionary.
         """
-        
+
         for url_dict in self.rurl_list:
             title = list(url_dict.keys())[0]
 
@@ -154,7 +167,7 @@ class URLCrawler(object):
             page += 1
 
             if not flag:
-                # Either no matched report in this page or matched report already in the database
+                # No matched report in this page
                 continue
 
             elif flag == -1:
@@ -174,17 +187,32 @@ class URLCrawler(object):
         soup = BeautifulSoup(src, "lxml")
         titles = soup.find_all(string=re.compile(self.__title_pattern))
         flag = 0
+
         if not titles:
             return flag
+
         for title in titles:
             title_td = title.parent.parent
             url_td = title_td.next_sibling
             url = url_td.contents[0].attrs["href"]
-            year = int(re.compile(r"(?P<year>\d{4})").search(str(title)).group("year"))
+
+            collect_phrases(title)
+
+            year = re.compile(r"(?P<year>(?:[零〇一二三四五六七八九]|\d){4})").search(title).group("year")
+
+            try:
+                year = int(year)
+            except ValueError:
+                chars = []
+                for char in year:
+                    chars.append(CN_NUM[char])
+                year = int(str().join(chars))
+
             if year >= self.__latest_year:
-                if url not in self.__url_list:
-                    flag += 1
+                flag += 1
+                if not self.__util.check_url(url):
                     self.rurl_list.append({str(title): {"Year": year, "URL": url}})
+
         if not flag:
             flag -= 1
         return flag
@@ -212,3 +240,5 @@ class URLCrawler(object):
                 logging.info("released memory space from report_list")
 
             logging.info("{} finished".format(stock_id))
+
+        update_phrases()
