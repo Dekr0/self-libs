@@ -8,15 +8,14 @@ import requests
 import sys
 import os
 
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__name__)), "config"))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__name__)), "config")))
+from .ado_util import *
 from config.config import USERAGENT, REPORT_DIR
 from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
 
-_CONN = None
-_REPORT_DICT = None
 _REPORT_DIR = REPORT_DIR
 
 
@@ -31,43 +30,7 @@ def __open_pdf(title):
 _OPEN_PDF = __open_pdf
 
 
-def get_url(sql, total):
-    count = 1
-    (rs, result) = _CONN.Execute(sql)
-    url_dict = dict()
-
-    flag = False
-    if total > 1:
-        flag = True
-
-    while not rs.EOF:
-        code = rs.Fields("股票代码").Value
-        name = rs.Fields("股票名称").Value
-        year = int(rs.Fields("年度").Value)
-        rtype_code = int(rs.Fields("报告编号").Value)
-        rtype = list(_REPORT_DICT.keys())[list(_REPORT_DICT.values()).index(rtype_code)]
-        url = rs.Fields("网址").Value
-
-        if not flag:
-            report_title = "{}-{}{}{}报告".format(code, name, year, rtype)
-        else:
-            report_title = "{}-{}{}{}报告({})".format(code, name, year, rtype, count)
-            count += 1
-
-        url_dict[report_title] = url
-        rs.MoveNext()
-
-    rs.Close()
-
-    return url_dict
-
-
-def show(conn, report_dict):
-
-    global _CONN, _REPORT_DICT
-    _CONN = conn
-    _REPORT_DICT = report_dict
-
+def show():
     app = QApplication(sys.argv)
     framework = MainFramework()
     logging.info("Widget are formed")
@@ -119,6 +82,10 @@ class MainFramework(QWidget):
     def __init__(self):
         super(MainFramework, self).__init__()
 
+        self.__util = ADOUtil()
+        self.__conn = self.__util.conn
+        self.__report_type = self.__util.get_report_type()
+
         self.sub_framework = None
         self.selection_window = None
 
@@ -141,6 +108,36 @@ class MainFramework(QWidget):
 
     def __add_stock(self, iterable):
         self.model.setStringList(iterable)
+
+    def __get_url(self, sql, total):
+        count = 1
+        (rs, result) = self.__conn.Execute(sql)
+        url_dict = dict()
+
+        flag = False
+        if total > 1:
+            flag = True
+
+        while not rs.EOF:
+            code = rs.Fields("股票代码").Value
+            name = rs.Fields("股票名称").Value
+            year = int(rs.Fields("年度").Value)
+            rtype_code = int(rs.Fields("报告编号").Value)
+            rtype = list(self.__report_type.keys())[list(self.__report_type.values()).index(rtype_code)]
+            url = rs.Fields("网址").Value
+
+            if not flag:
+                report_title = "{}-{}{}{}报告".format(code, name, year, rtype)
+            else:
+                report_title = "{}-{}{}{}报告({})".format(code, name, year, rtype, count)
+                count += 1
+
+            url_dict[report_title] = url
+            rs.MoveNext()
+
+        rs.Close()
+
+        return url_dict
 
     def __init_completer(self):
         self.completer = QCompleter()
@@ -181,7 +178,7 @@ class MainFramework(QWidget):
         self.type_layout = QHBoxLayout()
         self.type_combobox = QComboBox()
 
-        self.type_combobox.addItems(_REPORT_DICT.keys())
+        self.type_combobox.addItems(self.__report_type.keys())
 
         self.type_layout.addWidget(self.type_combobox)
 
@@ -209,11 +206,11 @@ class MainFramework(QWidget):
         text = self.stock_input.text().strip()
         if text:
             if re.fullmatch("\d{1,6}", text):
-                self.default_search(text, "股票代码")
+                self.__add_stock(self.__util.default_search("股票代码", text))
             elif re.fullmatch("[a-zA-Z ]+", text):
                 self.pinyin_search(text)
             else:
-                self.default_search(text, "股票名称")
+                self.__add_stock(self.__util.default_search("股票名称", text))
 
     @pyqtSlot()
     def query(self):
@@ -221,39 +218,24 @@ class MainFramework(QWidget):
         year = self.year_input.text().strip()
         try:
             (code, name) = stock.split("-")
-            report_type = _REPORT_DICT[self.type_combobox.currentText()]
+            report_type = self.__report_type[self.type_combobox.currentText()]
 
             query = r"SELECT * FROM PDF网址 WHERE 股票代码='{}'AND 股票名称='{}' AND 年度={} AND 报告编号={}" \
                 .format(code, name, int(year), report_type)
             cquery = r"SELECT COUNT(*) AS 数量 FROM ({})".format(query)
-            (com, result) = _CONN.Execute(cquery)
+            (com, result) = self.__conn.Execute(cquery)
             count = com.Fields("数量").Value
             com.Close()
 
             if not count:
                 raise
 
-            url_dict = get_url(query, count)
+            url_dict = self.__get_url(query, count)
             self.report_manage(url_dict, count)
 
         except Exception as ex:
             logging.critical(ex)
             QMessageBox.about(self, "查询错误", "查询结果不存在")
-
-    def default_search(self, string, flag):
-        query = r"SELECT * FROM 股票代码 WHERE {} LIKE '%{}%'".format(flag, string)
-        stock_list = []
-
-        (rs, result) = _CONN.Execute(query)
-        while not rs.EOF:
-            code = rs.Fields("股票代码").Value
-            name = rs.Fields("股票名称").Value
-            stock_list.append("{}-{}".format(code, name))
-            rs.MoveNext()
-
-        rs.Close()
-
-        self.__add_stock(stock_list)
 
     def download_reports(self, title, url):
         header = {
