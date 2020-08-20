@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import os
-import sys
 import logging
+import sys
+from os import path
 
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), "libs"))
+sys.path.append(path.abspath(path.join(path.dirname(path.dirname(__file__)), "libs")))
 from libs.crawler import URLCrawler
 
-logging.basicConfig(filename="extractor_log.log",
+logging.basicConfig(filename="url_crawler_log.log",
                     format="%(asctime)s - %(levelname)s - %(module)s: %(message)s",
                     datefmt="%Y-%m-%d %H:%M:%S %p",
                     level=logging.INFO)
