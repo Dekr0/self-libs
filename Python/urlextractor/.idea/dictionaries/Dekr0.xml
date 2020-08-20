@@ -12,6 +12,7 @@
       <w>cquery</w>
       <w>formatable</w>
       <w>hbox</w>
+      <w>lxml</w>
       <w>mssqlserver</w>
       <w>oledb</w>
       <w>pageurl</w>
