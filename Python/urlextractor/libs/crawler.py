@@ -26,17 +26,23 @@ from config.config import *
 _BASE_URL = BASE_URL
 _INIT_REQUEST = INIT_REQUEST
 _USERAGENT = USERAGENT
-_PHRASE_SET = set()
+_PATTERN_LIST = []
 
-if not path.exists(PHRASE_LIB):
-    json.dump(_PHRASE_SET, open(PHRASE_LIB, 'w'), indent=4)
+if not path.exists(PATTERN_LIB):
+    json.dump(_PATTERN_LIST, open(PATTERN_LIB, 'w'), indent=4)
 else:
-    _PHRASE_SET = json.load(open(PHRASE_LIB))
-
+    with open(PATTERN_LIB, 'r') as file:
+        phrases = file.read()
+        if phrases:
+            try:
+                _PATTERN_LIST = json.loads(phrases)
+            except:
+                logging.critical("Content in pattern_lib.json is not json format")
 
 def collect_phrases(title):
     phrase = re.search("(?<=：)\w+", title).group()
-    _PHRASE_SET.add(phrase)
+    if phrase not in _PATTERN_LIST:
+        _PATTERN_LIST.append(phrase)
 
 
 def get_page(src):
@@ -83,7 +89,7 @@ def request(referrer):
 
 
 def update_phrases():
-    json.dump(_PHRASE_SET, open(PHRASE_LIB, 'w'), indent=4)
+    json.dump(_PATTERN_LIST, open(PATTERN_LIB, 'w'), indent=4)
 
 
 class URLCrawler(object):
