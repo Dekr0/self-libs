@@ -2,14 +2,34 @@
 # -*- coding:utf-8 -*-
 
 
+import sys
 from os import path
 from fake_useragent import UserAgent
 import re
 
-APPDATA = path.abspath(path.join(path.dirname(path.dirname(__file__)), r"appdata"))
+
+# default: not running as a .exe file
+FROZEN = False
+LOCAL = False
+
+if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
+    FROZEN = True
+    MAIN_FILE = sys.argv[0]
+    DIST_DIR = path.abspath(path.dirname(MAIN_FILE))
+
+    if not path.exists(path.abspath(path.join(DIST_DIR, r"appdata"))):
+        # appdata folder doesn't exists in the local machine
+        bundle_dir = getattr(sys, "_MEIPASS", path.abspath(path.dirname(path.dirname(__file__))))
+        APPDATA = path.abspath(path.join(bundle_dir, r"appdata"))
+    else:
+        # appdata folder exists in the local machine
+        APPDATA = path.abspath(path.join(DIST_DIR, r"appdata"))
+else:
+    APPDATA = path.abspath(path.join(path.dirname(path.dirname(__file__)), r"appdata"))
+
 DATABASE = path.abspath(path.join(APPDATA, r"database\report_url.mdb"))
 REPORT_DIR = path.abspath(path.join(APPDATA, r"report\{}.pdf"))
-PHRASE_LIB = path.abspath(path.join(APPDATA, r"word_phrase.json"))
+PATTERN_LIB = path.abspath(path.join(APPDATA, r"pattern_lib.json"))
 
 BASE_URL = r"http://stockdata.stock.hexun.com{}"
 INIT_REQUEST = BASE_URL.format(r"/2009_ggqw_{}.shtml")
