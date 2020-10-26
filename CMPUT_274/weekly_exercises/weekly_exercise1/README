@@ -1,0 +1,19 @@
+Name: Chengxuan Li
+ID: 1631060
+CMPUT 274, Fall 2020
+
+Exercise 1: Password Validator
+
+Included Files:
+    * validator.py
+    *  README
+
+Ruuning Instructiosns: 
+	In terminal (in the directory that contains "validator.py" source code file), execute "python3 validator.py"
+
+Notes and Assumptions:
+
+    The file validator.py contains two functions called generate and validate. Function validate will validate whether if the password is valid, and determine its level of security based on the assignment description criteria. Function genereate will generate secure password that meets all the requirement of being a secure passowrd with length n.
+
+    The program assumes that it runs in Python Interperter 3.8.5 [GCC 10.2.0] on linux. Function validate assumes that the string taken as an argument will have an length that is an integer. Function generate assumes that an integer, which is string type or in the format of string, will be taken as an argument. This argument will be converted into int type (if the argument's value contains other characters that are not integer (0~9), an error will be invoked and caught by the exception handling statment, string "Invalid Input" will be returned. e.g "1.9", "Two")
+

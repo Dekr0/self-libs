@@ -1,0 +1,36 @@
+Name: Chengxuan Li
+ID: 1631060
+CMPUT 274, Fall 2020
+
+Exercise 4: Text Preprocessor
+
+
+Included Files:
+    * preprocess.py
+    * README
+
+
+Running Instructions:
+    To launch the program and preprocess a space-separated line of words
+    In terminal, execute "python3 preprocess.py <mode>"
+    "<mode>" is an optional argument, which keep specific types of characters,
+    can be one of three following:
+        - "keep-digits": do not remove numbers from words
+        - "keep-stops": do not remove stopwords
+        - "keep-symbols": do not remove punctuation or symbols
+    If there's no optional argument provided, all preprocess steps perform
+
+
+Notes and Assumption:
+    This program will take only one space-separated line of words and perform
+    all the preprocess steps in order (removing all punctuation, symbols, di-
+    -gits, and stopwords) unless <mode> argument is provided for keeping spe-
+    -cific type of characters
+
+    This program will automatically quit before performing all the preproces-
+    sed step if one of following happen:
+        - too many arguments are provided
+        - provided mode isn't recognizable by the program
+
+    After all preprocessing steps, an result, which consists of the word has
+    not been completely removed, will be printed

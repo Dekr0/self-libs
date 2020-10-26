@@ -1,0 +1,29 @@
+Name: Chengxuan Li
+ID: 1631060
+CMPUT 274, Fall 2020
+
+Exercise 2: Unfair Dice 
+
+Included Files:
+    * test.py
+    * unfairDice.py
+    * Makefile
+    * README
+
+Ruuning Instructiosns: 
+	To run the test cases (code snippets) from the assignment description):
+	    In terminal (in the directory that contains all the file mention in "Included Files"), type "make"
+
+Notes and Assumptions:
+
+    The file unfairDice.py contains two functions called biased_rolls and draw_histogram as well as some testcases (from the assignment description)athat will be run if the unfairDice.py is directly execute instead of being imported as a module. Function biased_rolls will simulate n rolls of a biased m-sided die and return a list containing the results. Function draw_histogram will draws a frequency histogram of the rolls of an m-sided die with a given fixed width.
+
+    The program assumes that it runs in Python Interperter 3.8.5 [GCC 10.2.0] on linux. Function biased_rolls expects three arguments to be passed:
+    1. A list whose elements are either floating number or expressions that execute fraction operations, and the value of elements has to be larger than 0 and smaller than 1
+    2. A positive integer that initialize the random number generator
+    3. A positive integer for amount of times of rolls
+    Function draw_histogram assumes that three arguments to be taken:
+    1. A positive integer for number of sides of a dice
+    2. A list contains of results from given number of rolls of a dice (the number sides of a dice must match with the first argument)
+    3. A postive integer for width / scale of the histogram
+
