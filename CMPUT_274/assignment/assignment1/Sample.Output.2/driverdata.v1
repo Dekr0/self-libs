@@ -1,0 +1,46 @@
+% Credit:  Paul Lu
+%pos-features just gentleman lady nonsense
+%pos-label #stuff
+%
+% Poorly adapted from:
+% https://examples.yourdictionary.com/limerick-examples.html
+%
+#stuff		A wonderful bird is the pelican,
+#stuff		His bill holds more than his belican.
+#stuff		He can take in his beak,
+#stuff		Enough food for a week,
+#stuff		But I'm darned if I see how it canican.
+%
+% The point here is word re-use, not poetry
+#stuff		A wonderful cat is the cheshire,
+#stuff		His bowl holds more than he can perspire,
+#stuff		He can take in his mouth,
+#stuff		Enough food to go south,
+#stuff		But I'm darned if it wants to retire.
+%
+% The point here is word re-use, not poetry
+#stuff		A wonderful game is flight simulator
+#stuff		It has dials, knobs, and regulators
+#stuff		One can take off and land
+#stuff		With stick and throttle in hand
+#stuff		Never too far from the refrigerator
+%
+#stuff		There was a young lady of Nice,
+#stuff		Who insisted on bathing in grease.
+#stuff		She slid through the house
+#stuff		Tormenting her spouse
+#stuff		Til he hid in the oven for peace.
+%
+% The point here is word re-use, not poetry
+#stuff		There was a young man of wealth,
+#stuff		Who insisted on travelling by stealth,
+#stuff		He slid through the house,
+#stuff		As quiet as a mouse,
+#stuff		Avoiding all attention or else
+%
+%
+#negative	That very same lady, I'm told
+#negative	Had a pet most uncommonly bold
+#negative	Not a cat, rat or woodchuck
+#negative	But a self-driving tow truck
+#negative	That was found left alone down the road

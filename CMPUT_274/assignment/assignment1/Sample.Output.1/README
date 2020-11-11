@@ -1,0 +1,22 @@
+Notes:
+
+1.  Read the comments in the Makefile
+
+2.  Only a1.alldriver.v1.py is supposed to do anything reasonable
+	with respect to classification.
+
+	When ooclassifier.py is finished, it should produce the same
+	output as in files data.v1.correct.output and
+	helpdata.v1.correct.output
+
+3.  In the output, there is a line of debugging output starting with:
+
+	"Not part of Task II: Your output might be in different order.  Debug:  Word Frequency:"
+
+	Note:
+	(a) This is provided to help you debug your code.
+	(b) Your program should **NOT** produce this output.  It is not
+		part of the program specification.
+	(c) The order of the key-value pairs in your output *might* be
+		different.  That is OK.  Only the counts should be the same,
+		not the order.
