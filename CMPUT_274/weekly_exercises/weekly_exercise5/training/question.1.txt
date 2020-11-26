@@ -1,0 +1,14 @@
+The positive feature will directly affect the number of true positive (TP),
+true negative (TN), false positive (FP), and false negative (FN) cases in
+the sentiment analysis. Changes in positive features will result a change
+in measurement and evaluation of the sentiment analysis.
+
+Instead of randomly trying words, the strategy of choosing positive feature
+to result in a desired accuracy is based on the formula of accuracy. Since
+the accuracy will increase as long as the sum of all TP and TN instances
+increases , which is the numerator of the formula, the method to increase
+accuracy is to either add features that can generate more TP cases and
+less FP cases or removing features that can generate more FP cases rather
+than TP cases. Consequently, number of FP and FN instances will decrease,
+which is part of the denominator of the formula as number of TN and TP
+instances increases.

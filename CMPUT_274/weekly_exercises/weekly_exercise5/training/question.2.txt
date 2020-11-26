@@ -1,0 +1,15 @@
+The strategy in creating the new training instances for this task is to keep
+the number of false negative and true positive cases in a specific ratio such
+that can maintain a high precision and low accuracy as long as no increment
+appears in the number of false positive and true negative cases. This strategy
+is based on the property of the accuracy and the precision formula. In order
+to increase precision, it need to either increase the number of TP cases or
+lower the number of FP cases (denominator). Meanwhile, the number of TP cases
+is also limited because it's one of the factors increase accuracy, which
+requires the number of FP cases to constraints the effect or lower the accuracy
+. The training instances that labelled as positive but does not contain
+positive features, known as false negative instances, can increase precision
+but decrease accuracy. For instances, "archive hard drives are built drives
+are usually built with SMR technology" is about hardware, and it mentions the
+full name of HHDs instead; "debugging led helps identify issues happen in the
+board" is talking about one of the features on motherboards".

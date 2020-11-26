@@ -1,0 +1,53 @@
+% Name: Chengxuan Li
+%pos-features CPUs GPUs RAM SSDs HHDs PSUs SATA motherboards processor m.2 CMOS overclocking cooling
+%pos-label #hardware
+% Note: the pos-label #hardware is limited to desktop (PCs) hardware
+%
+#hardware nvidia latest rtx 30s GPUs
+#hardware nvidia rtx 20s graphic cards
+#hardware some cooling towers require the case with larger width
+#hardware the clock speed is 4.0 Ghz
+#hardware overclocking increases the clock speed
+#hardware m.2 solid state drives has faster read and write access
+#hardware the Southbridge is one of the two chipset in the core logic
+#hardware the Intel CPUs have different sockets
+#hardware old graphic cards generally are less power efficient
+#hardware b450 motherboards support both Ryzen 3000 series
+#hardware 6 cores / 12 threads processor
+#hardware this graphic card running in boost clock speed
+#hardware SSDs have faster read and write access compared to HHDs
+#hardware overclocking might permanently damage the CPUs
+#hardware PSUs with gold certification has 90% efficiency at 50% system load
+#hardware solid state drives have two types: sata and m.2
+#hardware dual channel RAM is one version of multi-channel memory
+#hardware watch batteries turn on the CMOS memory for date and time in the BIOS chip
+#hardware taking off CMOS battery can reset the BIOS state
+#hardware high-end graphic cards generally draw more wattage
+#hardware liquid cooling system require the case larger height and length
+#hardware built-in wireless network card
+#hardware most of MBs have built-in sound card
+%
+%
+#negative the temperature is cooling down
+#negative he obtains a new credit card
+#negative the building is out of power
+#negative his phone is running out of storage
+#negative these air fans need dust filter
+#negative no internet connection
+#negative set up the router
+#negative he need a screw driver to open it
+#negative super sampling
+#negative anti aliasing
+#negative socket is module provides access to the BSD socket interface
+#negative power is the product of voltage and current
+#negative SD card can provide additional storage for mobile devices
+#negative SIM card is an important component of mobile devices
+#negative the weather is nice
+#negative the TV monitor has high resolution
+#negative DLSS use deep learning to upscale lower-resolution images to a higher resolution
+#negative ray tracing can generate more realistic lighting effects
+#negative the wind tunnel isn't optimized
+#negative the box doesn't have enough storage
+#negative motion blur
+#negative laptop touchpad
+#negative this is not the case

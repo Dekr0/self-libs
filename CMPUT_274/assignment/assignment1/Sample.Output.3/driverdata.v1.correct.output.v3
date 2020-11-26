@@ -1,0 +1,232 @@
+python3 a1.alldriver.v3.py driverdata.v1
+--------------------------------------------
+pos-features:  just gentleman lady nonsense
+pos-label:  #stuff
+Before:  #stuff A wonderful bird is the pelican,
+After :  A wonderful bird is the pelican,
+Before:  #stuff His bill holds more than his belican.
+After :  His bill holds more than his belican.
+Before:  #stuff He can take in his beak,
+After :  He can take in his beak,
+Before:  #stuff Enough food for a week,
+After :  Enough food for a week,
+Before:  #stuff But I'm darned if I see how it canican.
+After :  But I'm darned if I see how it canican.
+Before:  #stuff A wonderful cat is the cheshire,
+After :  A wonderful cat is the cheshire,
+Before:  #stuff His bowl holds more than he can perspire,
+After :  His bowl holds more than he can perspire,
+Before:  #stuff He can take in his mouth,
+After :  He can take in his mouth,
+Before:  #stuff Enough food to go south,
+After :  Enough food to go south,
+Before:  #stuff But I'm darned if it wants to retire.
+After :  But I'm darned if it wants to retire.
+Before:  #stuff A wonderful game is flight simulator
+After :  A wonderful game is flight simulator
+Before:  #stuff It has dials, knobs, and regulators
+After :  It has dials, knobs, and regulators
+Before:  #stuff One can take off and land
+After :  One can take off and land
+Before:  #stuff With stick and throttle in hand
+After :  With stick and throttle in hand
+Before:  #stuff Never too far from the refrigerator
+After :  Never too far from the refrigerator
+Before:  #stuff There was a young lady of Nice,
+After :  There was a young lady of Nice,
+Before:  #stuff Who insisted on bathing in grease.
+After :  Who insisted on bathing in grease.
+Before:  #stuff She slid through the house
+After :  She slid through the house
+Before:  #stuff Tormenting her spouse
+After :  Tormenting her spouse
+Before:  #stuff Til he hid in the oven for peace.
+After :  Til he hid in the oven for peace.
+Before:  #stuff There was a young man of wealth,
+After :  There was a young man of wealth,
+Before:  #stuff Who insisted on travelling by stealth,
+After :  Who insisted on travelling by stealth,
+Before:  #stuff He slid through the house,
+After :  He slid through the house,
+Before:  #stuff As quiet as a mouse,
+After :  As quiet as a mouse,
+Before:  #stuff Avoiding all attention or else
+After :  Avoiding all attention or else
+Before:  #negative That very same lady, I'm told
+After :  That very same lady, I'm told
+Before:  #negative Had a pet most uncommonly bold
+After :  Had a pet most uncommonly bold
+Before:  #negative Not a cat, rat or woodchuck
+After :  Not a cat, rat or woodchuck
+Before:  #negative But a self-driving tow truck
+After :  But a self-driving tow truck
+Before:  #negative That was found left alone down the road
+After :  That was found left alone down the road
+
+** Full Dataset (no preprocessing) *********
+Not part of Task II: Your output might be in different order.  Debug:  Word Frequency:  {'A': 3, 'wonderful': 3, 'bird': 1, 'is': 3, 'the': 6, 'pelican,': 1, 'His': 2, 'bill': 1, 'holds': 2, 'more': 2, 'than': 2, 'his': 3, 'belican.': 1, 'He': 3, 'can': 4, 'take': 3, 'in': 5, 'beak,': 1, 'Enough': 2, 'food': 2, 'for': 2, 'a': 4, 'week,': 1, 'But': 2, "I'm": 2, 'darned': 2, 'if': 2, 'I': 1, 'see': 1, 'how': 1, 'it': 2, 'canican.': 1, 'cat': 1, 'cheshire,': 1, 'bowl': 1, 'he': 2, 'perspire,': 1, 'mouth,': 1, 'to': 2, 'go': 1, 'south,': 1, 'wants': 1, 'retire.': 1, 'game': 1, 'flight': 1, 'simulator': 1, 'It': 1, 'has': 1, 'dials,': 1, 'knobs,': 1, 'and': 3, 'regulators': 1, 'One': 1, 'off': 1, 'land': 1, 'With': 1, 'stick': 1, 'throttle': 1, 'hand': 1, 'Never': 1, 'too': 1, 'far': 1, 'from': 1, 'refrigerator': 1, 'There': 2, 'was': 2, 'young': 2, 'lady': 1, 'of': 2, 'Nice,': 1, 'Who': 2, 'insisted': 2, 'on': 2, 'bathing': 1, 'grease.': 1, 'She': 1, 'slid': 2, 'through': 2, 'house': 1, 'Tormenting': 1, 'her': 1, 'spouse': 1, 'Til': 1, 'hid': 1, 'oven': 1, 'peace.': 1, 'man': 1, 'wealth,': 1, 'travelling': 1, 'by': 1, 'stealth,': 1, 'house,': 1, 'As': 1, 'quiet': 1, 'as': 1, 'mouse,': 1, 'Avoiding': 1, 'all': 1, 'attention': 1, 'or': 1, 'else': 1}
+['the', 'can', 'in', 'a']
+-------- Print Config --------
+TargetWords Hardcoded (4): ['the', 'can', 'in', 'a']
+-------- Evaluate Training Set --------
+TW TP: (        the) #stuff		A wonderful bird is the pelican,
+TW FN: (  #negative) #stuff		His bill holds more than his belican.
+TW TP: (        can) #stuff		He can take in his beak,
+TW TP: (          a) #stuff		Enough food for a week,
+TW FN: (  #negative) #stuff		But I'm darned if I see how it canican.
+TW TP: (        the) #stuff		A wonderful cat is the cheshire,
+TW TP: (        can) #stuff		His bowl holds more than he can perspire,
+TW TP: (        can) #stuff		He can take in his mouth,
+TW FN: (  #negative) #stuff		Enough food to go south,
+TW FN: (  #negative) #stuff		But I'm darned if it wants to retire.
+TW FN: (  #negative) #stuff		A wonderful game is flight simulator
+TW FN: (  #negative) #stuff		It has dials, knobs, and regulators
+TW TP: (        can) #stuff		One can take off and land
+TW TP: (         in) #stuff		With stick and throttle in hand
+TW TP: (        the) #stuff		Never too far from the refrigerator
+TW TP: (          a) #stuff		There was a young lady of Nice,
+TW TP: (         in) #stuff		Who insisted on bathing in grease.
+TW TP: (        the) #stuff		She slid through the house
+TW FN: (  #negative) #stuff		Tormenting her spouse
+TW TP: (         in) #stuff		Til he hid in the oven for peace.
+TW TP: (          a) #stuff		There was a young man of wealth,
+TW FN: (  #negative) #stuff		Who insisted on travelling by stealth,
+TW TP: (        the) #stuff		He slid through the house,
+TW TP: (          a) #stuff		As quiet as a mouse,
+TW FN: (  #negative) #stuff		Avoiding all attention or else
+TW TN: (  #negative) #negative	That very same lady, I'm told
+TW FP: (          a) #negative	Had a pet most uncommonly bold
+TW FP: (          a) #negative	Not a cat, rat or woodchuck
+TW FP: (          a) #negative	But a self-driving tow truck
+TW FP: (        the) #negative	That was found left alone down the road
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |         16          4
+       not |          9          1
+Accuracy:  0.57 = (16 + 1) / (16 + 1 + 4 + 9)
+Precision: 0.8 = 16 / (16 + 4)
+Recall:    0.64 = 16 / (16 + 9)
+
+** Full Dataset (with preproc, top N) ******
+Not part of Task II: Your output might be in different order.  Debug:  Word Frequency:  {'wonderful': 3, 'bird': 1, 'pelican': 1, 'bill': 1, 'holds': 2, 'belican': 1, 'take': 3, 'beak': 1, 'enough': 2, 'food': 2, 'week': 1, 'im': 2, 'darned': 2, 'see': 1, 'canican': 1, 'cat': 1, 'cheshire': 1, 'bowl': 1, 'perspire': 1, 'mouth': 1, 'go': 1, 'south': 1, 'wants': 1, 'retire': 1, 'game': 1, 'flight': 1, 'simulator': 1, 'dials': 1, 'knobs': 1, 'regulators': 1, 'one': 1, 'land': 1, 'stick': 1, 'throttle': 1, 'hand': 1, 'never': 1, 'far': 1, 'refrigerator': 1, 'young': 2, 'lady': 1, 'nice': 1, 'insisted': 2, 'bathing': 1, 'grease': 1, 'slid': 2, 'house': 2, 'tormenting': 1, 'spouse': 1, 'til': 1, 'hid': 1, 'oven': 1, 'peace': 1, 'man': 1, 'wealth': 1, 'travelling': 1, 'stealth': 1, 'quiet': 1, 'mouse': 1, 'avoiding': 1, 'attention': 1, 'else': 1}
+Target Words:  ['wonderful', 'holds', 'take', 'enough', 'food', 'im', 'darned', 'young', 'insisted', 'slid', 'house']
+-------- Print Config --------
+TargetWords Hardcoded (11): ['wonderful', 'holds', 'take', 'enough', 'food', 'im', 'darned', 'young', 'insisted', 'slid', 'house']
+-------- Evaluate Training Set --------
+TW TP: (  wonderful) #stuff		A wonderful bird is the pelican,
+TW TP: (      holds) #stuff		His bill holds more than his belican.
+TW TP: (       take) #stuff		He can take in his beak,
+TW TP: (     enough) #stuff		Enough food for a week,
+TW TP: (         im) #stuff		But I'm darned if I see how it canican.
+TW TP: (  wonderful) #stuff		A wonderful cat is the cheshire,
+TW TP: (      holds) #stuff		His bowl holds more than he can perspire,
+TW TP: (       take) #stuff		He can take in his mouth,
+TW TP: (     enough) #stuff		Enough food to go south,
+TW TP: (         im) #stuff		But I'm darned if it wants to retire.
+TW TP: (  wonderful) #stuff		A wonderful game is flight simulator
+TW FN: (  #negative) #stuff		It has dials, knobs, and regulators
+TW TP: (       take) #stuff		One can take off and land
+TW FN: (  #negative) #stuff		With stick and throttle in hand
+TW FN: (  #negative) #stuff		Never too far from the refrigerator
+TW TP: (      young) #stuff		There was a young lady of Nice,
+TW TP: (   insisted) #stuff		Who insisted on bathing in grease.
+TW TP: (       slid) #stuff		She slid through the house
+TW FN: (  #negative) #stuff		Tormenting her spouse
+TW FN: (  #negative) #stuff		Til he hid in the oven for peace.
+TW TP: (      young) #stuff		There was a young man of wealth,
+TW TP: (   insisted) #stuff		Who insisted on travelling by stealth,
+TW TP: (       slid) #stuff		He slid through the house,
+TW FN: (  #negative) #stuff		As quiet as a mouse,
+TW FN: (  #negative) #stuff		Avoiding all attention or else
+TW FP: (         im) #negative	That very same lady, I'm told
+TW TN: (  #negative) #negative	Had a pet most uncommonly bold
+TW TN: (  #negative) #negative	Not a cat, rat or woodchuck
+TW TN: (  #negative) #negative	But a self-driving tow truck
+TW TN: (  #negative) #negative	That was found left alone down the road
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |         18          1
+       not |          7          4
+Accuracy:  0.73 = (18 + 4) / (18 + 4 + 1 + 7)
+Precision: 0.95 = 18 / (18 + 1)
+Recall:    0.72 = 18 / (18 + 7)
+
+Does preprocessing improve PRA? (Not 100% apples vs. oranges.)
+
+** By folds (3) ****************************
+   *** Using Test Fold 0 *******************
+Not part of Task II: Your output might be in different order.  Debug:  Word Frequency:  {'bill': 1, 'holds': 1, 'belican': 1, 'im': 1, 'darned': 1, 'see': 1, 'canican': 1, 'take': 2, 'mouth': 1, 'wonderful': 2, 'game': 1, 'flight': 1, 'simulator': 1, 'stick': 1, 'throttle': 1, 'hand': 1, 'insisted': 1, 'bathing': 1, 'grease': 1, 'til': 1, 'hid': 1, 'oven': 1, 'peace': 1, 'slid': 2, 'house': 2, 'beak': 1, 'cat': 1, 'cheshire': 1, 'enough': 1, 'food': 1, 'go': 1, 'south': 1, 'dials': 1, 'knobs': 1, 'regulators': 1, 'never': 1, 'far': 1, 'refrigerator': 1, 'young': 1, 'man': 1, 'wealth': 1, 'quiet': 1, 'mouse': 1}
+-------- Print Config --------
+TargetWords Hardcoded (4): ['take', 'wonderful', 'slid', 'house']
+-------- Evaluate Training Set --------
+TW TP: (  wonderful) #stuff		A wonderful bird is the pelican,
+TW FN: (  #negative) #stuff		Enough food for a week,
+TW FN: (  #negative) #stuff		His bowl holds more than he can perspire,
+TW FN: (  #negative) #stuff		But I'm darned if it wants to retire.
+TW TP: (       take) #stuff		One can take off and land
+TW FN: (  #negative) #stuff		There was a young lady of Nice,
+TW FN: (  #negative) #stuff		Tormenting her spouse
+TW FN: (  #negative) #stuff		Who insisted on travelling by stealth,
+TW FN: (  #negative) #stuff		Avoiding all attention or else
+TW TN: (  #negative) #negative	Not a cat, rat or woodchuck
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |          2          0
+       not |          7          1
+Accuracy:  0.3 = (2 + 1) / (2 + 1 + 0 + 7)
+Precision:   1 = 2 / (2 + 0)
+Recall:    0.22 = 2 / (2 + 7)
+   *** Using Test Fold 1 *******************
+Not part of Task II: Your output might be in different order.  Debug:  Word Frequency:  {'wonderful': 2, 'bird': 1, 'pelican': 1, 'enough': 2, 'food': 2, 'week': 1, 'bowl': 1, 'holds': 1, 'perspire': 1, 'im': 1, 'darned': 1, 'wants': 1, 'retire': 1, 'one': 1, 'take': 2, 'land': 1, 'young': 2, 'lady': 1, 'nice': 1, 'tormenting': 1, 'spouse': 1, 'insisted': 1, 'travelling': 1, 'stealth': 1, 'avoiding': 1, 'attention': 1, 'else': 1, 'beak': 1, 'cat': 1, 'cheshire': 1, 'go': 1, 'south': 1, 'dials': 1, 'knobs': 1, 'regulators': 1, 'never': 1, 'far': 1, 'refrigerator': 1, 'slid': 1, 'house': 1, 'man': 1, 'wealth': 1, 'quiet': 1, 'mouse': 1}
+-------- Print Config --------
+TargetWords Hardcoded (5): ['wonderful', 'enough', 'food', 'take', 'young']
+-------- Evaluate Training Set --------
+TW FN: (  #negative) #stuff		His bill holds more than his belican.
+TW FN: (  #negative) #stuff		But I'm darned if I see how it canican.
+TW TP: (       take) #stuff		He can take in his mouth,
+TW TP: (  wonderful) #stuff		A wonderful game is flight simulator
+TW FN: (  #negative) #stuff		With stick and throttle in hand
+TW FN: (  #negative) #stuff		Who insisted on bathing in grease.
+TW FN: (  #negative) #stuff		Til he hid in the oven for peace.
+TW FN: (  #negative) #stuff		He slid through the house,
+TW TN: (  #negative) #negative	That very same lady, I'm told
+TW TN: (  #negative) #negative	But a self-driving tow truck
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |          2          0
+       not |          6          2
+Accuracy:  0.4 = (2 + 2) / (2 + 2 + 0 + 6)
+Precision:   1 = 2 / (2 + 0)
+Recall:    0.25 = 2 / (2 + 6)
+   *** Using Test Fold 2 *******************
+Not part of Task II: Your output might be in different order.  Debug:  Word Frequency:  {'wonderful': 2, 'bird': 1, 'pelican': 1, 'enough': 1, 'food': 1, 'week': 1, 'bowl': 1, 'holds': 2, 'perspire': 1, 'im': 2, 'darned': 2, 'wants': 1, 'retire': 1, 'one': 1, 'take': 2, 'land': 1, 'young': 1, 'lady': 1, 'nice': 1, 'tormenting': 1, 'spouse': 1, 'insisted': 2, 'travelling': 1, 'stealth': 1, 'avoiding': 1, 'attention': 1, 'else': 1, 'bill': 1, 'belican': 1, 'see': 1, 'canican': 1, 'mouth': 1, 'game': 1, 'flight': 1, 'simulator': 1, 'stick': 1, 'throttle': 1, 'hand': 1, 'bathing': 1, 'grease': 1, 'til': 1, 'hid': 1, 'oven': 1, 'peace': 1, 'slid': 1, 'house': 1}
+-------- Print Config --------
+TargetWords Hardcoded (6): ['wonderful', 'holds', 'im', 'darned', 'take', 'insisted']
+-------- Evaluate Training Set --------
+TW TP: (       take) #stuff		He can take in his beak,
+TW TP: (  wonderful) #stuff		A wonderful cat is the cheshire,
+TW FN: (  #negative) #stuff		Enough food to go south,
+TW FN: (  #negative) #stuff		It has dials, knobs, and regulators
+TW FN: (  #negative) #stuff		Never too far from the refrigerator
+TW FN: (  #negative) #stuff		She slid through the house
+TW FN: (  #negative) #stuff		There was a young man of wealth,
+TW FN: (  #negative) #stuff		As quiet as a mouse,
+TW TN: (  #negative) #negative	Had a pet most uncommonly bold
+TW TN: (  #negative) #negative	That was found left alone down the road
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |          2          0
+       not |          6          2
+Accuracy:  0.4 = (2 + 2) / (2 + 2 + 0 + 6)
+Precision:   1 = 2 / (2 + 0)
+Recall:    0.25 = 2 / (2 + 6)

@@ -1,0 +1,101 @@
+python3 a1.alldriver.v2.py driverdata.v1
+--------------------------------------------
+pos-features:  just gentleman lady nonsense
+pos-label:  #stuff
+-- Preprocessing and Top 3 Words -----------
+Not part of Task II: Your output might be in different order.  Debug:  Word Frequency:  {'stuff': 25, 'wonderful': 3, 'bird': 1, 'pelican': 1, 'bill': 1, 'holds': 2, 'belican': 1, 'take': 3, 'beak': 1, 'enough': 2, 'food': 2, 'week': 1, 'im': 2, 'darned': 2, 'see': 1, 'canican': 1, 'cat': 1, 'cheshire': 1, 'bowl': 1, 'perspire': 1, 'mouth': 1, 'go': 1, 'south': 1, 'wants': 1, 'retire': 1, 'game': 1, 'flight': 1, 'simulator': 1, 'dials': 1, 'knobs': 1, 'regulators': 1, 'one': 1, 'land': 1, 'stick': 1, 'throttle': 1, 'hand': 1, 'never': 1, 'far': 1, 'refrigerator': 1, 'young': 2, 'lady': 1, 'nice': 1, 'insisted': 2, 'bathing': 1, 'grease': 1, 'slid': 2, 'house': 2, 'tormenting': 1, 'spouse': 1, 'til': 1, 'hid': 1, 'oven': 1, 'peace': 1, 'man': 1, 'wealth': 1, 'travelling': 1, 'stealth': 1, 'quiet': 1, 'mouse': 1, 'avoiding': 1, 'attention': 1, 'else': 1}
+-------- Print Config --------
+TargetWords Hardcoded (11): ['wonderful', 'holds', 'take', 'enough', 'food', 'im', 'darned', 'young', 'insisted', 'slid', 'house']
+-------- Evaluate Training Set --------
+TW TP: (  wonderful) #stuff		A wonderful bird is the pelican,
+TW TP: (      holds) #stuff		His bill holds more than his belican.
+TW TP: (       take) #stuff		He can take in his beak,
+TW TP: (     enough) #stuff		Enough food for a week,
+TW TP: (         im) #stuff		But I'm darned if I see how it canican.
+TW TP: (  wonderful) #stuff		A wonderful cat is the cheshire,
+TW TP: (      holds) #stuff		His bowl holds more than he can perspire,
+TW TP: (       take) #stuff		He can take in his mouth,
+TW TP: (     enough) #stuff		Enough food to go south,
+TW TP: (         im) #stuff		But I'm darned if it wants to retire.
+TW TP: (  wonderful) #stuff		A wonderful game is flight simulator
+TW FN: (  #negative) #stuff		It has dials, knobs, and regulators
+TW TP: (       take) #stuff		One can take off and land
+TW FN: (  #negative) #stuff		With stick and throttle in hand
+TW FN: (  #negative) #stuff		Never too far from the refrigerator
+TW TP: (      young) #stuff		There was a young lady of Nice,
+TW TP: (   insisted) #stuff		Who insisted on bathing in grease.
+TW TP: (       slid) #stuff		She slid through the house
+TW FN: (  #negative) #stuff		Tormenting her spouse
+TW FN: (  #negative) #stuff		Til he hid in the oven for peace.
+TW TP: (      young) #stuff		There was a young man of wealth,
+TW TP: (   insisted) #stuff		Who insisted on travelling by stealth,
+TW TP: (       slid) #stuff		He slid through the house,
+TW FN: (  #negative) #stuff		As quiet as a mouse,
+TW FN: (  #negative) #stuff		Avoiding all attention or else
+TW FP: (         im) #negative	That very same lady, I'm told
+TW TN: (  #negative) #negative	Had a pet most uncommonly bold
+TW TN: (  #negative) #negative	Not a cat, rat or woodchuck
+TW TN: (  #negative) #negative	But a self-driving tow truck
+TW TN: (  #negative) #negative	That was found left alone down the road
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |         18          1
+       not |          7          4
+-- By folds (2) ----------------------------
+-------- Print Config --------
+TargetWords Hardcoded (11): ['wonderful', 'holds', 'take', 'enough', 'food', 'im', 'darned', 'young', 'insisted', 'slid', 'house']
+-------- Evaluate Training Set --------
+TW TP: (  wonderful) #stuff		A wonderful bird is the pelican,
+TW TP: (       take) #stuff		He can take in his beak,
+TW TP: (         im) #stuff		But I'm darned if I see how it canican.
+TW TP: (      holds) #stuff		His bowl holds more than he can perspire,
+TW TP: (     enough) #stuff		Enough food to go south,
+TW TP: (  wonderful) #stuff		A wonderful game is flight simulator
+TW TP: (       take) #stuff		One can take off and land
+TW FN: (  #negative) #stuff		Never too far from the refrigerator
+TW TP: (   insisted) #stuff		Who insisted on bathing in grease.
+TW FN: (  #negative) #stuff		Tormenting her spouse
+TW TP: (      young) #stuff		There was a young man of wealth,
+TW TP: (       slid) #stuff		He slid through the house,
+TW FN: (  #negative) #stuff		Avoiding all attention or else
+TW TN: (  #negative) #negative	Had a pet most uncommonly bold
+TW TN: (  #negative) #negative	But a self-driving tow truck
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |         10          0
+       not |          3          2
+Accuracy:  0.8 = (10 + 2) / (10 + 2 + 0 + 3)
+Precision:   1 = 10 / (10 + 0)
+Recall:    0.77 = 10 / (10 + 3)
+********************************************
+-------- Print Config --------
+TargetWords Hardcoded (11): ['wonderful', 'holds', 'take', 'enough', 'food', 'im', 'darned', 'young', 'insisted', 'slid', 'house']
+-------- Evaluate Training Set --------
+TW TP: (      holds) #stuff		His bill holds more than his belican.
+TW TP: (     enough) #stuff		Enough food for a week,
+TW TP: (  wonderful) #stuff		A wonderful cat is the cheshire,
+TW TP: (       take) #stuff		He can take in his mouth,
+TW TP: (         im) #stuff		But I'm darned if it wants to retire.
+TW FN: (  #negative) #stuff		It has dials, knobs, and regulators
+TW FN: (  #negative) #stuff		With stick and throttle in hand
+TW TP: (      young) #stuff		There was a young lady of Nice,
+TW TP: (       slid) #stuff		She slid through the house
+TW FN: (  #negative) #stuff		Til he hid in the oven for peace.
+TW TP: (   insisted) #stuff		Who insisted on travelling by stealth,
+TW FN: (  #negative) #stuff		As quiet as a mouse,
+TW FP: (         im) #negative	That very same lady, I'm told
+TW TN: (  #negative) #negative	Not a cat, rat or woodchuck
+TW TN: (  #negative) #negative	That was found left alone down the road
+-------- Confusion Matrix --------
+   Predict |         Label
+-----------+----------------------
+           |     #stuff        not
+    #stuff |          8          1
+       not |          4          2
+Accuracy:  0.67 = (8 + 2) / (8 + 2 + 1 + 4)
+Precision: 0.89 = 8 / (8 + 1)
+Recall:    0.67 = 8 / (8 + 4)
