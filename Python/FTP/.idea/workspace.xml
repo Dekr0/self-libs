@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5994c0ac-269c-49d5-8fc6-fdb190078ad6" name="Default Changelist" comment="" />
+    <list default="true" id="5994c0ac-269c-49d5-8fc6-fdb190078ad6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientSite/bin/ClientSiteLauncher.py" beforeDir="false" afterPath="$PROJECT_DIR$/ClientSite/bin/ClientSiteLauncher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/bin/ServerLauncher.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/ServerLauncher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/bin/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/config/userskey.psw" beforeDir="false" afterPath="$PROJECT_DIR$/Server/config/userskey.psw" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +38,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1aogr7JFUfbpOA6tCA0zIxmwOia" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,8 +50,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="ToolWindowFavorites.ShowToolbar" value="false" />
-    <property name="last_opened_file_path" value="D:/Dekr0/blog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
   </component>
   <component name="RecentsManager">
@@ -40,7 +69,28 @@
       <recent name="E:\Src\Python\FTP\Server\libs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.s1 (1)">
+  <component name="RunManager" selected="Python.ServerLauncher">
+    <configuration name="ServerLauncher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FTP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Server/bin" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Server/bin/ServerLauncher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="s1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="note" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -54,27 +104,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../note/2020-6-20/s1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="s1 (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="note" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../note/2020-06-16" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../note/2020-06-16/s1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,18 +177,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.s1 (1)" />
-      <item itemvalue="Python.s1 (2)" />
       <item itemvalue="Python.s1" />
       <item itemvalue="Python.s3" />
       <item itemvalue="Python.s4" />
+      <item itemvalue="Python.ServerLauncher" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ServerLauncher" />
         <item itemvalue="Python.s1 (1)" />
         <item itemvalue="Python.s1" />
         <item itemvalue="Python.s4" />
         <item itemvalue="Python.s3" />
-        <item itemvalue="Python.s1 (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -176,75 +205,38 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588468923162">
+    <state width="1899" height="168" key="GridCell.Tab.0.bottom" timestamp="1606699526951">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1588468923162" />
-    <state x="694" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591829061824">
+    <state width="1899" height="168" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1606699526951" />
+    <state width="1899" height="168" key="GridCell.Tab.0.center" timestamp="1606699526950">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="694" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1591829061824" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1592844437617">
+    <state width="1899" height="168" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1606699526950" />
+    <state width="1899" height="168" key="GridCell.Tab.0.left" timestamp="1606699526950">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1592844437617" />
-    <state width="1899" height="153" key="GridCell.Tab.0.bottom" timestamp="1592692029474">
+    <state width="1899" height="168" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1606699526950" />
+    <state width="1899" height="168" key="GridCell.Tab.0.right" timestamp="1606699526951">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state width="1899" height="153" key="GridCell.Tab.0.center" timestamp="1592692029474">
+    <state width="1899" height="168" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1606699526951" />
+    <state x="662" y="257" width="596" height="536" key="find.popup" timestamp="1606699492319">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="153" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state width="1899" height="153" key="GridCell.Tab.0.left" timestamp="1592692029474">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="153" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state width="1899" height="153" key="GridCell.Tab.0.right" timestamp="1592692029474">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="153" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state width="1899" height="153" key="GridCell.Tab.1.bottom" timestamp="1592692029474">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="153" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state width="1899" height="153" key="GridCell.Tab.1.center" timestamp="1592692029474">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="153" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state width="1899" height="153" key="GridCell.Tab.1.left" timestamp="1592692029474">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="153" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state width="1899" height="153" key="GridCell.Tab.1.right" timestamp="1592692029474">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="153" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592692029474" />
-    <state x="540" y="267" key="IDE.errors.dialog" timestamp="1591725941816">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="540" y="267" key="IDE.errors.dialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591725941816" />
-    <state x="694" y="195" key="SettingsEditor" timestamp="1591044209940">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="694" y="195" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1591044209940" />
-    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1590602523261">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1920.1050@0.0.1920.1050" timestamp="1590602523261" />
-    <state x="517" y="253" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592174407126">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="517" y="253" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1050@0.0.1920.1050" timestamp="1592174407126" />
-    <state x="662" y="123" width="596" height="804" key="find.popup" timestamp="1592344089158">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="662" y="123" width="596" height="804" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1592344089158" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1591478004379">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1591478004379" />
+    <state x="662" y="257" width="596" height="536" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1606699492319" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

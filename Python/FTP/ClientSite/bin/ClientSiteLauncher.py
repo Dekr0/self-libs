@@ -8,7 +8,7 @@ python ClientSiteLauncher.py register -i 127.0.0.1 -p 9000
 '''
 
 import sys
-sys.path.insert(0, 'E:/Src/Python/FTP/ClientSite/libs')
+sys.path.insert(0, 'D:/Dekr0/self-libs/Python/FTP/ClientSite/libs')
 import client
 
 if __name__ == '__main__':
